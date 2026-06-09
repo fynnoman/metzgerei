@@ -70,6 +70,57 @@
   });
 })();
 
+// ============ Counter count-up ============
+(() => {
+  const els = document.querySelectorAll('[data-counter]');
+  if (!els.length || !('IntersectionObserver' in window)) {
+    els.forEach(el => {
+      const to = el.dataset.countTo;
+      const suffix = el.dataset.countSuffix || '';
+      el.textContent = to + suffix;
+    });
+    return;
+  }
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const animateCounter = (el) => {
+    const target = parseFloat(el.dataset.countTo);
+    if (isNaN(target)) return;
+    const suffix = el.dataset.countSuffix || '';
+    if (reduce) {
+      el.textContent = target.toLocaleString('de-DE') + suffix;
+      return;
+    }
+    const duration = parseInt(el.dataset.countDuration || '1800', 10);
+    const start = performance.now();
+    const ease = (t) => 1 - Math.pow(1 - t, 3); // ease-out-cubic
+
+    const step = (now) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const value = Math.floor(ease(progress) * target);
+      // Year-like numbers (>= 1000): start near 1850 for drama
+      const display = target >= 1000
+        ? Math.floor(1850 + ease(progress) * (target - 1850)).toString()
+        : value.toLocaleString('de-DE');
+      el.textContent = display + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target.toLocaleString('de-DE') + suffix;
+    };
+    requestAnimationFrame(step);
+  };
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        io.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.2 });
+  els.forEach(el => io.observe(el));
+})();
+
 // ============ Rotating product stack (hero) ============
 (() => {
   const stack = document.querySelector('[data-product-stack]');
