@@ -1,10 +1,8 @@
-// Metzgerei Jochem — Motion-driven scroll animations
+// Metzgerei Jochem — interactions in Fylu-DNA
 
-const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-// ============================== INTERSECTION REVEALS ==============================
+// ============ Scroll reveal ============
 (() => {
-  const els = document.querySelectorAll('.reveal, .reveal-blur');
+  const els = document.querySelectorAll('.reveal, .reveal-soft');
   if (!els.length) return;
   if (!('IntersectionObserver' in window)) {
     els.forEach(el => el.classList.add('in'));
@@ -17,11 +15,11 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         io.unobserve(entry.target);
       }
     });
-  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
   els.forEach(el => io.observe(el));
 })();
 
-// ============================== HEADER SCROLL ==============================
+// ============ Header scroll state ============
 (() => {
   const header = document.querySelector('[data-header]');
   if (!header) return;
@@ -33,28 +31,27 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   update();
 })();
 
-// ============================== MOBILE MENU ==============================
+// ============ Mobile menu ============
 (() => {
-  const trigger = document.querySelector('[data-menu-open]');
-  const closer  = document.querySelector('[data-menu-close]');
-  const panel   = document.querySelector('.mobile-panel');
-  if (!trigger || !panel) return;
-  const open  = () => { panel.classList.add('open');  document.body.style.overflow = 'hidden'; };
-  const close = () => { panel.classList.remove('open'); document.body.style.overflow = ''; };
-  trigger.addEventListener('click', open);
-  closer?.addEventListener('click', close);
-  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  const open  = document.querySelector('[data-menu-open]');
+  const close = document.querySelector('[data-menu-close]');
+  const panel = document.querySelector('.mobile-panel');
+  if (!open || !panel) return;
+  const o = () => { panel.classList.add('open');  document.body.style.overflow = 'hidden'; };
+  const c = () => { panel.classList.remove('open'); document.body.style.overflow = ''; };
+  open.addEventListener('click', o);
+  close?.addEventListener('click', c);
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', c));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') c(); });
 })();
 
-// ============================== YEAR ==============================
+// ============ Year ============
 (() => {
   document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
 })();
 
-// ============================== LIVE OPEN STATE ==============================
+// ============ Live open state ============
 (() => {
-  // Mo-Do 07:30-12:30; Di+Do also 14:30-18:00; Fr 07:30-18:00; Sa 07:00-13:00
   const now = new Date();
   const day = now.getDay();
   const h = now.getHours() + now.getMinutes() / 60;
@@ -66,139 +63,46 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (day === 6 && inRange(7, 13)) open = true;
 
   document.querySelectorAll('[data-open-state]').forEach(el => {
-    el.textContent = open ? 'Jetzt geöffnet' : 'Außerhalb der Öffnungszeiten';
+    el.textContent = open ? 'Heute geöffnet' : 'Geschlossen · Automat 24/7';
   });
-  document.querySelectorAll('[data-open-dot]').forEach(el => {
-    if (!open) el.classList.add('closed');
+  document.querySelectorAll('[data-open-pill]').forEach(el => {
+    if (open) el.classList.add('ping-green'); else el.classList.add('ping-red');
   });
 })();
 
-// ============================== MOTION ONE — Scroll Animations ==============================
+// ============ Rotating product stack (hero) ============
 (() => {
-  if (reduced) return;
-  if (typeof Motion === 'undefined') {
-    console.warn('Motion One library not loaded — skipping scroll animations');
-    return;
-  }
-  const { scroll, animate, inView } = Motion;
+  const stack = document.querySelector('[data-product-stack]');
+  if (!stack) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  // --- HERO: dramatic parallax + scale + fade ---
-  const heroImage   = document.querySelector('[data-parallax]');
-  const heroSection = document.querySelector('.hero');
-  const heroContent = document.querySelector('.hero-content');
+  const cards = stack.querySelectorAll('.product-card');
+  if (cards.length < 2) return;
 
-  if (heroImage && heroSection) {
-    scroll(
-      animate(heroImage, {
-        scale: [1.05, 1.25],
-        y: [0, 180],
-      }),
-      { target: heroSection, offset: ['start start', 'end start'] }
-    );
-  }
+  const slots = [
+    { rotate: -7, x: -28, y: 32, scale: 0.93, z: 10, opacity: 0.85 },
+    { rotate:  3, x:  14, y: -14, scale: 1.0,  z: 30, opacity: 1.0 },
+    { rotate:  9, x:  44, y: 18, scale: 0.88, z: 20, opacity: 0.78 },
+  ];
 
-  if (heroContent && heroSection) {
-    scroll(
-      animate(heroContent, {
-        opacity: [1, 0.15],
-        y: [0, -60],
-        scale: [1, 0.95],
-      }),
-      { target: heroSection, offset: ['start start', 'end start'] }
-    );
-  }
+  let featured = 1; // index of card in front slot
+  const total = cards.length;
 
-  // --- FEATURE IMAGES: subtle scale + rotate during sticky pin ---
-  document.querySelectorAll('[data-feature-image]').forEach((el) => {
-    const row = el.closest('.feature-row');
-    if (!row) return;
-    scroll(
-      animate(el, {
-        scale: [0.92, 1.0, 1.0, 0.94],
-        rotate: [-1.5, 0, 0, 1.5],
-      }),
-      { target: row, offset: ['start end', 'center center', 'center center', 'end start'] }
-    );
-  });
+  const applySlots = () => {
+    cards.forEach((card, idx) => {
+      const offset = ((idx - featured + 1) % total + total) % total;
+      const s = slots[offset] || slots[0];
+      card.style.transform =
+        `translate(${s.x}px, ${s.y}px) rotate(${s.rotate}deg) scale(${s.scale})`;
+      card.style.zIndex = s.z;
+      card.style.opacity = s.opacity;
+    });
+  };
 
-  // --- MEGA STAT 122: scale + glow while sticky ---
-  const megaStat = document.querySelector('[data-mega-stat]');
-  if (megaStat) {
-    const innerStat = megaStat.querySelector('.stat-big');
-    if (innerStat) {
-      scroll(
-        animate(innerStat, {
-          scale: [0.85, 1.0, 1.05, 0.95],
-          letterSpacing: ['-0.04em', '-0.05em', '-0.05em', '-0.04em'],
-        }),
-        { target: megaStat, offset: ['start end', 'center center', 'center center', 'end start'] }
-      );
-    }
-  }
+  applySlots();
 
-  // --- MEDAL DISC: entrance scale + rotate via inView ---
-  inView('.medal-disc', (info) => {
-    animate(info.target, {
-      scale: [0.4, 1],
-      rotate: [-180, 0],
-      opacity: [0, 1],
-    }, { duration: 1.1, easing: [0.16, 1, 0.3, 1] });
-    return () => {};
-  }, { amount: 0.4 });
-
-  // --- MEDAL RIBBON: enter from below ---
-  inView('.medal-ribbon', (info) => {
-    animate(info.target, {
-      y: [40, 0],
-      opacity: [0, 1],
-    }, { duration: 0.7, delay: 0.5, easing: [0.16, 1, 0.3, 1] });
-    return () => {};
-  }, { amount: 0.5 });
-
-  // --- AURA / GLOWS: subtle scroll-linked drift ---
-  document.querySelectorAll('.aura-amber, .aura-ember').forEach((el) => {
-    const section = el.parentElement;
-    if (!section) return;
-    scroll(
-      animate(el, {
-        y: [0, -120],
-      }),
-      { target: section, offset: ['start end', 'end start'] }
-    );
-  });
-
-  // --- TRADITION TIMELINE DOTS: stronger glow as they enter ---
-  inView('.tline-dot', (info) => {
-    animate(info.target, {
-      scale: [0, 1],
-      opacity: [0, 1],
-    }, { duration: 0.6, delay: 0.2, easing: [0.16, 1, 0.3, 1] });
-    return () => {};
-  }, { amount: 0.6 });
-
-  // --- HOURS ROWS: subtle slide-in on scroll ---
-  inView('.hours-row', (info) => {
-    animate(info.target, {
-      x: [-30, 0],
-      opacity: [0, 1],
-    }, { duration: 0.55, easing: [0.16, 1, 0.3, 1] });
-    return () => {};
-  }, { amount: 0.5 });
-
-  // --- CHIPS: cascade enter ---
-  const chips = document.querySelectorAll('.chip');
-  if (chips.length) {
-    inView(chips[0].parentElement, () => {
-      chips.forEach((chip, i) => {
-        animate(chip, {
-          y: [20, 0],
-          opacity: [0, 1],
-        }, { duration: 0.5, delay: i * 0.035, easing: [0.16, 1, 0.3, 1] });
-      });
-      return () => {};
-    }, { amount: 0.2 });
-  }
-
-  // --- MARQUEE: slow when scrolling reverse for "scrub" feel ---
-  // (Marquee runs via CSS animation; we leave it alone for performance.)
+  setInterval(() => {
+    featured = (featured + 1) % total;
+    applySlots();
+  }, 4200);
 })();
