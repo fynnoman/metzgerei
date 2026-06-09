@@ -21,8 +21,8 @@
           bg: '#FFFFFF', 'bg-warm': '#FAF5EB',
           ink: '#1A1310', 'ink-soft': '#3A2F26',
           stone: { 50:'#FAFAF9', 100:'#F5F5F4', 200:'#E7E5E4', 300:'#D6D3D1', 400:'#A8A29E', 500:'#78716C', 600:'#57534E', 700:'#44403C', 800:'#292524', 900:'#1C1917' },
-          oxblood: '#8B2424', 'oxblood-dark': '#6B1B1B', 'oxblood-deep': '#4A0F0F',
-          butter: '#C2410C', 'butter-soft': '#FED7AA', gold: '#D4A857',
+          blue: '#1E3A8A', 'blue-bright': '#2563EB', 'blue-dark': '#1E40AF', 'blue-deep': '#172554',
+          red: '#DC2626', 'red-dark': '#991B1B', 'red-soft': '#FCA5A5', 'red-deep': '#7F1D1D', gold: '#D4A857',
         },
         fontFamily: {
           sans: ['Geist','sans-serif'], display: ['Fraunces','serif'], mono: ['JetBrains Mono','monospace'],
@@ -57,7 +57,7 @@
 <section class="relative py-20 lg:py-28 px-5 sm:px-8 bg-bg-warm border-b border-stone-200 overflow-hidden isolate">
   <div class="absolute inset-0 -z-10">
     <div class="absolute inset-0 dot-grid opacity-[0.35]" style="mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%);"></div>
-    <div class="absolute inset-0 bloom-butter opacity-50"></div>
+    <div class="absolute inset-0 bloom-red opacity-50"></div>
     <div class="noise-overlay opacity-30"></div>
   </div>
   <div class="relative max-w-7xl mx-auto">
@@ -87,7 +87,7 @@
     <div class="lg:col-span-9 max-w-2xl space-y-14">
 
       <section id="anbieter">
-        <h2 class="font-display text-2xl font-semibold mb-5 pb-3 border-b-2 border-oxblood">Anbieter</h2>
+        <h2 class="font-display text-2xl font-semibold mb-5 pb-3 border-b-2 border-blue">Anbieter</h2>
         <div class="text-stone-600 leading-relaxed space-y-1">
           <p class="text-ink font-semibold text-lg">Jochem GmbH Metzgerei und Lebensmittel</p>
           <p>Marke: Metzgerei Martin Jochem</p>
@@ -98,20 +98,20 @@
       </section>
 
       <section id="vertretung">
-        <h2 class="font-display text-2xl font-semibold mb-5 pb-3 border-b-2 border-oxblood">Vertretung</h2>
+        <h2 class="font-display text-2xl font-semibold mb-5 pb-3 border-b-2 border-blue">Vertretung</h2>
         <p class="text-stone-600">Vertretungsberechtigter Geschäftsführer: <span class="text-ink font-medium">Marco Jochem</span></p>
       </section>
 
       <section id="kontakt">
-        <h2 class="font-display text-2xl font-semibold mb-5 pb-3 border-b-2 border-oxblood">Kontakt</h2>
+        <h2 class="font-display text-2xl font-semibold mb-5 pb-3 border-b-2 border-blue">Kontakt</h2>
         <div class="text-stone-600 space-y-2">
-          <p>Telefon: <a href="tel:+4968345113" class="text-ink font-medium hover:text-oxblood transition-colors">0 68 34 / 5 11 13</a></p>
-          <p>E-Mail: <a href="mailto:metzgereijochem@aol.com" class="text-ink font-medium hover:text-oxblood transition-colors">metzgereijochem@aol.com</a></p>
+          <p>Telefon: <a href="tel:+4968345113" class="text-ink font-medium hover:text-blue transition-colors">0 68 34 / 5 11 13</a></p>
+          <p>E-Mail: <a href="mailto:metzgereijochem@aol.com" class="text-ink font-medium hover:text-blue transition-colors">metzgereijochem@aol.com</a></p>
         </div>
       </section>
 
       <section id="register">
-        <h2 class="font-display text-2xl font-semibold mb-5 pb-3 border-b-2 border-oxblood">Registereintrag</h2>
+        <h2 class="font-display text-2xl font-semibold mb-5 pb-3 border-b-2 border-blue">Registereintrag</h2>
         <div class="text-stone-600 space-y-2">
           <p>Registergericht: <span class="text-ink font-medium">Amtsgericht Saarbrücken</span></p>
           <p>Registernummer: <span class="text-ink font-medium">HRB 24333</span></p>
@@ -121,16 +121,16 @@
       </section>
 
       <section id="aufsicht">
-        <h2 class="font-display text-2xl font-semibold mb-5 pb-3 border-b-2 border-oxblood">Aufsichtsbehörde &amp; Kammer</h2>
+        <h2 class="font-display text-2xl font-semibold mb-5 pb-3 border-b-2 border-blue">Aufsichtsbehörde &amp; Kammer</h2>
         <div class="text-stone-600 space-y-3 leading-relaxed">
           <p>Zuständige Lebensmittelüberwachungsbehörde: <span class="text-ink font-medium">Landkreis Saarlouis</span> — Veterinär- und Lebensmittelüberwachungsamt.</p>
           <p>Kammerzugehörigkeit: <span class="text-ink font-medium">Saarländische Fleischerinnung</span> sowie zuständige Handwerkskammer des Saarlandes.</p>
-          <p>Berufsrechtliche Regelungen: Handwerksordnung (HwO), Lebensmittel- und Futtermittelgesetzbuch (LFGB) — einsehbar unter <a href="https://www.gesetze-im-internet.de" target="_blank" rel="noopener" class="text-oxblood hover:underline">gesetze-im-internet.de</a>.</p>
+          <p>Berufsrechtliche Regelungen: Handwerksordnung (HwO), Lebensmittel- und Futtermittelgesetzbuch (LFGB) — einsehbar unter <a href="https://www.gesetze-im-internet.de" target="_blank" rel="noopener" class="text-blue hover:underline">gesetze-im-internet.de</a>.</p>
         </div>
       </section>
 
       <section id="verantwortlich">
-        <h2 class="font-display text-2xl font-semibold mb-5 pb-3 border-b-2 border-oxblood">Inhaltlich verantwortlich nach § 18 Abs. 2 MStV</h2>
+        <h2 class="font-display text-2xl font-semibold mb-5 pb-3 border-b-2 border-blue">Inhaltlich verantwortlich nach § 18 Abs. 2 MStV</h2>
         <div class="text-stone-600 space-y-1">
           <p class="text-ink font-medium">Marco Jochem</p>
           <p>Anschrift wie oben</p>
@@ -138,12 +138,12 @@
       </section>
 
       <section id="streitschlichtung">
-        <h2 class="font-display text-2xl font-semibold mb-5 pb-3 border-b-2 border-oxblood">EU-Streitschlichtung</h2>
-        <p class="text-stone-600 leading-relaxed">Plattform zur Online-Streitbeilegung: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener" class="text-oxblood hover:underline">ec.europa.eu/consumers/odr</a>. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+        <h2 class="font-display text-2xl font-semibold mb-5 pb-3 border-b-2 border-blue">EU-Streitschlichtung</h2>
+        <p class="text-stone-600 leading-relaxed">Plattform zur Online-Streitbeilegung: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener" class="text-blue hover:underline">ec.europa.eu/consumers/odr</a>. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
       </section>
 
       <section id="haftung">
-        <h2 class="font-display text-2xl font-semibold mb-5 pb-3 border-b-2 border-oxblood">Haftung für Inhalte und Links</h2>
+        <h2 class="font-display text-2xl font-semibold mb-5 pb-3 border-b-2 border-blue">Haftung für Inhalte und Links</h2>
         <p class="text-stone-600 leading-relaxed">Als Diensteanbieter sind wir für eigene Inhalte nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.</p>
         <p class="text-stone-600 leading-relaxed mt-4">Unser Angebot enthält Links zu externen Websites, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich.</p>
       </section>
@@ -164,14 +164,14 @@
       <div class="brand-mark"><span class="seal-j">J</span></div>
       <div class="leading-tight">
         <div class="font-display font-semibold text-lg">Jochem</div>
-        <div class="text-[10px] tracking-[0.22em] uppercase text-butter-soft font-medium mt-0.5">Metzgerei · 1902</div>
+        <div class="text-[10px] tracking-[0.22em] uppercase text-red-soft font-medium mt-0.5">Metzgerei · 1902</div>
       </div>
     </a>
     <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-stone-400">
       <span>&copy; <span data-year>2026</span> Jochem GmbH</span>
-      <a href="impressum.html"        class="hover:text-butter-soft">Impressum</a>
-      <a href="datenschutz.html"      class="hover:text-butter-soft">Datenschutz</a>
-      <a href="barrierefreiheit.html" class="hover:text-butter-soft">Barrierefreiheit</a>
+      <a href="impressum.html"        class="hover:text-red-soft">Impressum</a>
+      <a href="datenschutz.html"      class="hover:text-red-soft">Datenschutz</a>
+      <a href="barrierefreiheit.html" class="hover:text-red-soft">Barrierefreiheit</a>
     </div>
   </div>
 </footer>

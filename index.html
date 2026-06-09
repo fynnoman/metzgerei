@@ -20,21 +20,24 @@
       extend: {
         colors: {
           bg:           '#FFFFFF',
-          'bg-warm':    '#FAF5EB',
-          ink:          '#1A1310',
-          'ink-soft':   '#3A2F26',
+          'bg-warm':    '#F8FAFC',
+          'bg-cool':    '#EFF6FF',
+          ink:          '#0A1628',
+          'ink-soft':   '#1E2A3D',
           stone: {
-            50: '#FAFAF9', 100: '#F5F5F4', 200: '#E7E5E4', 300: '#D6D3D1',
-            400: '#A8A29E', 500: '#78716C', 600: '#57534E', 700: '#44403C',
-            800: '#292524', 900: '#1C1917',
+            50: '#F8FAFC', 100: '#F1F5F9', 200: '#E2E8F0', 300: '#CBD5E1',
+            400: '#94A3B8', 500: '#64748B', 600: '#475569', 700: '#334155',
+            800: '#1E293B', 900: '#0F172A',
           },
-          oxblood:        '#8B2424',
-          'oxblood-dark': '#6B1B1B',
-          'oxblood-deep': '#4A0F0F',
-          butter:         '#C2410C',
-          'butter-soft':  '#FED7AA',
-          gold:           '#D4A857',
-          cream:          '#FAF3E6',
+          blue:          '#1E3A8A',
+          'blue-bright': '#2563EB',
+          'blue-dark':   '#1E40AF',
+          'blue-deep':   '#172554',
+          red:           '#DC2626',
+          'red-dark':    '#991B1B',
+          'red-soft':    '#FCA5A5',
+          'red-deep':    '#7F1D1D',
+          gold:          '#D4A857',
         },
         fontFamily: {
           sans:    ['Geist', 'sans-serif'],
@@ -104,10 +107,20 @@
   <!-- Atmosphere -->
   <div class="absolute inset-0 -z-10">
     <div class="absolute inset-0 dot-grid dot-grid-mask opacity-[0.55]"></div>
-    <div class="absolute inset-0 bloom-oxblood"></div>
-    <div class="absolute inset-0 bloom-butter opacity-60"></div>
+    <div class="absolute inset-0 bloom-blue"></div>
+    <div class="absolute inset-0 bloom-red opacity-60"></div>
     <div class="noise-overlay"></div>
     <div class="absolute bottom-0 left-0 right-0 h-32 pointer-events-none horizon-fade"></div>
+  </div>
+
+  <!-- Backdrop number: massive 1902 -->
+  <div aria-hidden="true" class="absolute right-[-3vw] bottom-[-6vw] lg:right-[2vw] lg:bottom-[-4vw] backdrop-number text-[28vw] lg:text-[18vw] xl:text-[16vw] font-display select-none pointer-events-none z-0">
+    1902
+  </div>
+
+  <!-- Side label vertical -->
+  <div class="hidden lg:flex absolute left-4 top-1/2 -translate-y-1/2 items-center z-10">
+    <span class="vlabel">Tradition · Handwerk · Saarland</span>
   </div>
 
   <div class="relative z-10 max-w-7xl mx-auto w-full px-5 sm:px-8 pt-28 md:pt-32 pb-20 md:pb-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -129,7 +142,7 @@
         Vier Generationen,
         <br>
         <span class="hand-underline">
-          <span class="font-display italic font-normal text-oxblood-deep">ein Handwerk.</span>
+          <span class="font-display italic font-normal text-blue-deep">ein Handwerk.</span>
           <svg viewBox="0 0 220 18" preserveAspectRatio="none" fill="none" aria-hidden="true">
             <path d="M4 11 C 35 6, 80 14, 120 9 S 195 7, 216 12" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
             <path d="M8 14 C 50 11, 95 16, 140 12 S 200 13, 212 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.6"/>
@@ -157,12 +170,12 @@
       <!-- Trust line -->
       <div class="reveal-soft mt-12 pt-6 border-t border-stone-200 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-stone-600" style="--reveal-delay: 360ms;">
         <div class="flex items-center gap-2">
-          <span class="text-butter font-display italic text-lg leading-none">✦</span>
+          <span class="text-red font-display italic text-lg leading-none">✦</span>
           <span><strong class="font-semibold text-ink">Feinschmecker</strong> · Top 500 Deutschlands 2023</span>
         </div>
         <span class="text-stone-300">·</span>
         <div class="flex items-center gap-2">
-          <span class="text-butter font-display italic text-lg leading-none">✦</span>
+          <span class="text-red font-display italic text-lg leading-none">✦</span>
           <span><strong class="font-semibold text-ink">4 × Gold</strong> · Meisterstücke 2023</span>
         </div>
       </div>
@@ -211,6 +224,27 @@
   </div>
 </section>
 
+<!-- =============================== MARQUEE TICKER =============================== -->
+<section class="relative py-7 md:py-9 bg-ink overflow-hidden border-y border-stone-900">
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="marquee-item blue"><span style="color:#FAFAF8">Seit 11.&nbsp;November 1902</span><span class="dot"></span></span>
+      <span class="marquee-item gold">Vier Mal Gold · Meisterstücke 2023<span class="dot"></span></span>
+      <span class="marquee-item red"><span style="color:#FAFAF8">Top 500 Deutschlands · Feinschmecker</span><span class="dot"></span></span>
+      <span class="marquee-item blue">Eigene Wurstküche · Eigene Reifekammer<span class="dot"></span></span>
+      <span class="marquee-item gold"><span style="color:#FAFAF8">Hauptstraße 24, Schwalbach</span><span class="dot"></span></span>
+      <span class="marquee-item red">Vier Generationen Handwerk<span class="dot"></span></span>
+      <!-- duplicate for seamless loop -->
+      <span class="marquee-item blue"><span style="color:#FAFAF8">Seit 11.&nbsp;November 1902</span><span class="dot"></span></span>
+      <span class="marquee-item gold">Vier Mal Gold · Meisterstücke 2023<span class="dot"></span></span>
+      <span class="marquee-item red"><span style="color:#FAFAF8">Top 500 Deutschlands · Feinschmecker</span><span class="dot"></span></span>
+      <span class="marquee-item blue">Eigene Wurstküche · Eigene Reifekammer<span class="dot"></span></span>
+      <span class="marquee-item gold"><span style="color:#FAFAF8">Hauptstraße 24, Schwalbach</span><span class="dot"></span></span>
+      <span class="marquee-item red">Vier Generationen Handwerk<span class="dot"></span></span>
+    </div>
+  </div>
+</section>
+
 <!-- =============================== PHILOSOPHY BAND =============================== -->
 <section class="relative py-20 md:py-28 px-5 sm:px-8 bg-bg overflow-hidden isolate border-y border-stone-200">
 
@@ -222,17 +256,24 @@
 
   <div class="relative max-w-7xl mx-auto text-center">
 
-    <div class="reveal-soft inline-flex items-center gap-2 px-3 py-1 rounded-full bg-oxblood/8 border border-oxblood/15 mb-7">
-      <span class="text-butter text-xs">✦</span>
-      <span class="text-[11px] tracking-[0.22em] uppercase font-medium text-oxblood-deep">Unsere Philosophie</span>
+    <div class="reveal-soft inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue/8 border border-blue/15 mb-7">
+      <span class="text-red text-xs">✦</span>
+      <span class="text-[11px] tracking-[0.22em] uppercase font-medium text-blue-deep">Unsere Philosophie</span>
     </div>
 
     <blockquote class="reveal max-w-4xl mx-auto" style="--reveal-delay: 80ms;">
       <p class="font-display text-[2rem] sm:text-4xl md:text-5xl lg:text-[3.6rem] lg:leading-[1.05] font-medium italic text-ink tracking-[-0.025em]">
         „Lieber weniger,
-        <span class="not-italic font-semibold text-oxblood-deep">dafür besseres Fleisch.</span>"
+        <span class="not-italic font-semibold text-blue-deep">dafür besseres Fleisch.</span>"
       </p>
     </blockquote>
+
+    <!-- Tricolore accent stripe -->
+    <div class="reveal-soft flex items-center justify-center gap-0 mt-8 mx-auto w-44 h-1 rounded-full overflow-hidden" style="--reveal-delay: 140ms;">
+      <span class="flex-1 h-full bg-blue"></span>
+      <span class="flex-1 h-full bg-white border-y border-stone-200"></span>
+      <span class="flex-1 h-full bg-red"></span>
+    </div>
 
     <p class="reveal-soft mt-9 max-w-2xl mx-auto text-stone-600 leading-relaxed text-base md:text-lg" style="--reveal-delay: 200ms;">
       Qualität vor Menge. Regionalität vor Anonymität. Bewusster Fleischkonsum vor Massenware. Das ist nicht unser Marketing — das ist unser Maßstab seit 1902.
@@ -254,8 +295,13 @@
   <!-- Atmosphere -->
   <div class="absolute inset-0 -z-10">
     <div class="absolute inset-0 dot-grid opacity-[0.32]" style="mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 30%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 30%, transparent 75%);"></div>
-    <div class="absolute top-0 right-0 w-[60vw] h-[50vw] bloom-butter opacity-90"></div>
+    <div class="absolute top-0 right-0 w-[60vw] h-[50vw] bloom-red opacity-90"></div>
     <div class="noise-overlay opacity-30"></div>
+  </div>
+
+  <!-- Backdrop number: 4× -->
+  <div aria-hidden="true" class="absolute -left-[3vw] top-[12vw] backdrop-number backdrop-number-red text-[35vw] lg:text-[24vw] font-display italic select-none pointer-events-none z-0">
+    4×
   </div>
 
   <div class="relative z-10 max-w-7xl mx-auto">
@@ -267,7 +313,7 @@
       </div>
       <h2 class="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-[3.6rem] lg:leading-[1] font-semibold text-ink tracking-[-0.035em]">
         Vier Mal Gold.
-        <span class="font-display italic font-normal text-oxblood-deep">Im selben Jahr.</span>
+        <span class="font-display italic font-normal text-blue-deep">Im selben Jahr.</span>
       </h2>
       <p class="mt-5 text-lg text-stone-600 max-w-2xl leading-relaxed">
         Die Meisterstücke der deutschen Fleischerei: ein Wettbewerb, der nicht ausgelobt wird, sondern verdient. 2023 sind vier unserer Klassiker mit Gold belegt worden.
@@ -334,7 +380,7 @@
           <span class="text-[11px] uppercase tracking-[0.3em] text-stone-500 font-medium">+ Außerdem</span>
         </div>
         <h3 class="text-[1.6rem] md:text-3xl font-semibold text-ink tracking-[-0.02em] leading-[1.15]">
-          Vom <span class="font-display italic font-normal text-oxblood-deep">Feinschmecker-Magazin</span> 2023 unter die <strong class="font-semibold">500 besten</strong> Metzgereien Deutschlands gewählt.
+          Vom <span class="font-display italic font-normal text-blue-deep">Feinschmecker-Magazin</span> 2023 unter die <strong class="font-semibold">500 besten</strong> Metzgereien Deutschlands gewählt.
         </h3>
       </div>
       <div class="lg:col-span-5">
@@ -359,7 +405,7 @@
       </div>
       <h2 class="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-[3.6rem] lg:leading-[1] font-semibold text-ink tracking-[-0.035em]">
         Seit dem
-        <span class="font-display italic font-normal text-oxblood-deep">11. November 1902</span>
+        <span class="font-display italic font-normal text-blue-deep">11. November 1902</span>
         in derselben Tür.
       </h2>
       <p class="mt-5 text-lg text-stone-600 max-w-2xl leading-relaxed">
@@ -375,7 +421,7 @@
         <div class="flex items-baseline gap-5 mb-2">
           <div class="font-display italic text-[5rem] md:text-[8rem] leading-[0.85] font-semibold text-gold">1902</div>
           <div class="pb-3">
-            <div class="text-[11px] uppercase tracking-[0.22em] text-butter-soft font-medium">Gegründet</div>
+            <div class="text-[11px] uppercase tracking-[0.22em] text-red-soft font-medium">Gegründet</div>
             <div class="text-[11px] uppercase tracking-[0.22em] text-stone-400 mt-1">11. November</div>
           </div>
         </div>
@@ -384,22 +430,22 @@
 
         <div class="space-y-1">
           <div class="tline">
-            <div class="tline-dot" style="background: var(--butter); box-shadow: 0 0 0 4px var(--ink);"></div>
+            <div class="tline-dot" style="background: var(--red); box-shadow: 0 0 0 4px var(--ink);"></div>
             <div class="font-display font-semibold text-lg">1902 — Gründung</div>
             <p class="text-sm text-stone-400 mt-1 leading-relaxed">Eröffnung in der Hauptstraße 24 — handwerkliche Metzgerei mit eigener Schlachtung.</p>
           </div>
           <div class="tline">
-            <div class="tline-dot" style="background: var(--butter); box-shadow: 0 0 0 4px var(--ink);"></div>
+            <div class="tline-dot" style="background: var(--red); box-shadow: 0 0 0 4px var(--ink);"></div>
             <div class="font-display font-semibold text-lg">2. Generation</div>
             <p class="text-sm text-stone-400 mt-1 leading-relaxed">Etablierung der heutigen Wurstrezepturen, Erweiterung des Sortiments.</p>
           </div>
           <div class="tline">
-            <div class="tline-dot" style="background: var(--butter); box-shadow: 0 0 0 4px var(--ink);"></div>
+            <div class="tline-dot" style="background: var(--red); box-shadow: 0 0 0 4px var(--ink);"></div>
             <div class="font-display font-semibold text-lg">1983 — Martin &amp; Marianne Jochem</div>
             <p class="text-sm text-stone-400 mt-1 leading-relaxed">Übernahme in dritter Generation. Aufbau des Mittagstischs und Lieferservices — die Metzgerei wird zum Treffpunkt in Schwalbach.</p>
           </div>
           <div class="tline">
-            <div class="tline-dot" style="background: var(--oxblood); box-shadow: 0 0 0 4px var(--ink);"></div>
+            <div class="tline-dot" style="background: var(--red); box-shadow: 0 0 0 4px var(--ink);"></div>
             <div class="font-display font-semibold text-lg">2008 — Marco Jochem, Meisterbrief</div>
             <p class="text-sm text-stone-400 mt-1 leading-relaxed">Vierte Generation. Marco Jochem legt die Meisterprüfung im Fleischerhandwerk ab und übernimmt — 2023 vier Gold-Auszeichnungen und Aufnahme in die Feinschmecker Top 500 Deutschlands.</p>
           </div>
@@ -417,7 +463,7 @@
 
       <!-- TILE: family quote -->
       <div class="reveal card-light md:col-span-2 p-7 flex flex-col justify-between" style="--reveal-delay: 160ms;">
-        <span class="font-display italic text-5xl text-butter leading-none">"</span>
+        <span class="font-display italic text-5xl text-red leading-none">"</span>
         <div>
           <p class="font-display text-lg leading-snug text-ink">Was sich in vier Generationen bewährt hat, geben wir nicht her.</p>
           <p class="mt-3 text-[11px] uppercase tracking-[0.22em] text-stone-500 font-medium">— Familie Jochem</p>
@@ -454,7 +500,7 @@
   <!-- Atmosphere -->
   <div class="absolute inset-0 -z-10">
     <div class="absolute inset-0 dot-grid opacity-[0.35]" style="mask-image: radial-gradient(ellipse 80% 60% at 70% 30%, black 30%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse 80% 60% at 70% 30%, black 30%, transparent 80%);"></div>
-    <div class="absolute top-0 left-0 w-[50vw] h-[40vw] bloom-cream opacity-90"></div>
+    <div class="absolute top-0 left-0 w-[50vw] h-[40vw] bloom-cool opacity-90"></div>
     <div class="noise-overlay opacity-30"></div>
   </div>
 
@@ -466,7 +512,7 @@
         <span class="e-text">Sortiment</span>
       </div>
       <h2 class="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-[3.6rem] lg:leading-[1] font-semibold text-ink tracking-[-0.035em]">
-        Aus <span class="font-display italic font-normal text-oxblood-deep">eigener Wurstküche</span>.<br>
+        Aus <span class="font-display italic font-normal text-blue-deep">eigener Wurstküche</span>.<br>
         Aus eigener Reifekammer.
       </h2>
       <p class="mt-5 text-lg text-stone-600 max-w-2xl leading-relaxed">
@@ -487,7 +533,7 @@
           <div class="tag-pill mb-5">★ Gold Meisterstücke 2023</div>
           <h3 class="text-3xl md:text-4xl font-semibold text-ink tracking-[-0.025em] leading-[1.05]">
             Delikatess-<br>
-            <span class="font-display italic font-normal text-oxblood-deep">Leberwurst</span>.
+            <span class="font-display italic font-normal text-blue-deep">Leberwurst</span>.
           </h3>
           <p class="mt-6 text-stone-600 leading-relaxed max-w-md">
             Cremig, fein abgeschmeckt, ehrlich — exakt das Profil, mit dem unser Urgroßvater 1902 begonnen hat. Das Rezept hat sich nicht geändert.
@@ -509,7 +555,7 @@
         <div class="lg:col-span-7 lg:order-1 reveal" style="--reveal-delay: 100ms;">
           <div class="tag-pill mb-5">★ Gold Meisterstücke 2023</div>
           <h3 class="text-3xl md:text-4xl font-semibold text-ink tracking-[-0.025em] leading-[1.05]">
-            Haus<span class="font-display italic font-normal text-oxblood-deep">salami</span>.
+            Haus<span class="font-display italic font-normal text-blue-deep">salami</span>.
           </h3>
           <p class="mt-6 text-stone-600 leading-relaxed max-w-md">
             Über Wochen in der eigenen Reifekammer gewachsen. Würzig, dicht, ausbalanciert — eine Salami mit Charakter und langer Halbzeit auf dem Brettchen.
@@ -531,7 +577,7 @@
         <div class="lg:col-span-5 reveal" style="--reveal-delay: 100ms;">
           <div class="tag-pill mb-5">★ Gold Meisterstücke 2023</div>
           <h3 class="text-3xl md:text-4xl font-semibold text-ink tracking-[-0.025em] leading-[1.05]">
-            Farmer<span class="font-display italic font-normal text-oxblood-deep">schinken</span>.
+            Farmer<span class="font-display italic font-normal text-blue-deep">schinken</span>.
           </h3>
           <p class="mt-6 text-stone-600 leading-relaxed max-w-md">
             Langsam über Buchenholz geräuchert. Leicht süßlich, klares Raucharoma, dichte Faser — saarländischer Charakterschinken aus dem eigenen Räucherofen.
@@ -553,7 +599,7 @@
         <div class="lg:col-span-7 lg:order-1 reveal" style="--reveal-delay: 100ms;">
           <div class="tag-pill mb-5">★ Gold Meisterstücke 2023</div>
           <h3 class="text-3xl md:text-4xl font-semibold text-ink tracking-[-0.025em] leading-[1.05]">
-            Lyoner <span class="font-display italic font-normal text-oxblood-deep">im Ring</span>.
+            Lyoner <span class="font-display italic font-normal text-blue-deep">im Ring</span>.
           </h3>
           <p class="mt-6 text-stone-600 leading-relaxed max-w-md">
             Der saarländische Klassiker — saftig, mild, mit klarem Eigenprofil. Hausrezept seit Generationen, jeden Tag frisch aus der eigenen Wurstküche.
@@ -597,7 +643,7 @@
         <span class="e-text">Mittagstisch</span>
       </div>
       <h2 class="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-[3.6rem] lg:leading-[1] font-semibold text-ink tracking-[-0.035em]">
-        Mittags wird <span class="font-display italic font-normal text-oxblood-deep">gekocht</span>.
+        Mittags wird <span class="font-display italic font-normal text-blue-deep">gekocht</span>.
       </h2>
       <p class="mt-5 text-lg text-stone-600 max-w-2xl leading-relaxed">
         Hausmannskost aus eigener Küche — Schweinebraten, Rouladen, Frikadellen, Putenschwenker, dazu wechselnde Tagesgerichte. Was es heute gibt? Rufen Sie uns kurz an, wir sagen es Ihnen.
@@ -615,7 +661,7 @@
           </div>
           <p class="font-display text-2xl md:text-3xl lg:text-4xl text-bg-warm leading-[1.1] tracking-tight">
             Frisch aus der Küche.<br>
-            <span class="italic font-normal text-butter-soft">Täglich anders.</span>
+            <span class="italic font-normal text-red-soft">Täglich anders.</span>
           </p>
           <p class="mt-3 text-bg-warm/80 text-sm md:text-base max-w-sm">Solange der Vorrat reicht — wir empfehlen Vorbestellung.</p>
         </div>
@@ -628,7 +674,7 @@
       <div class="lg:col-span-5 reveal">
 
         <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-12">
-          <a href="tel:+4968345113" class="btn btn-oxblood">
+          <a href="tel:+4968345113" class="btn btn-red">
             Tagesgericht erfragen
             <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -699,7 +745,7 @@
 
           <div class="mt-7 pt-5 border-t border-stone-200 flex flex-wrap items-baseline justify-between gap-3">
             <div class="text-[11px] uppercase tracking-[0.22em] text-stone-500 font-medium">Vorbestellung &amp; Bestellung</div>
-            <a href="tel:+4968345113" class="font-display text-2xl font-semibold text-oxblood hover:text-oxblood-dark transition-colors">0 68 34 / 5 11 13</a>
+            <a href="tel:+4968345113" class="font-display text-2xl font-semibold text-blue hover:text-blue-dark transition-colors">0 68 34 / 5 11 13</a>
           </div>
         </div>
       </div>
@@ -714,8 +760,8 @@
 
   <!-- Atmosphere -->
   <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute top-0 right-0 w-[50vw] h-[40vw]" style="background: radial-gradient(50% 50% at 70% 30%, rgba(194,65,12,0.18), transparent 70%);"></div>
-    <div class="absolute bottom-0 left-0 w-[40vw] h-[40vw]" style="background: radial-gradient(50% 50% at 30% 70%, rgba(139,36,36,0.20), transparent 70%);"></div>
+    <div class="absolute top-0 right-0 w-[50vw] h-[40vw]" style="background: radial-gradient(50% 50% at 70% 30%, rgba(220,38,38,0.18), transparent 70%);"></div>
+    <div class="absolute bottom-0 left-0 w-[40vw] h-[40vw]" style="background: radial-gradient(50% 50% at 30% 70%, rgba(30,58,138,0.25), transparent 70%);"></div>
     <div class="noise-overlay opacity-40"></div>
   </div>
 
@@ -723,11 +769,11 @@
 
     <div class="reveal mb-14 md:mb-20 max-w-3xl">
       <div class="eyebrow">
-        <span class="e-num !text-butter-soft">§5</span>
+        <span class="e-num !text-red-soft">§5</span>
         <span class="e-text !text-stone-400">Service</span>
       </div>
       <h2 class="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-[3.6rem] lg:leading-[1] font-semibold text-bg-warm tracking-[-0.035em]">
-        Auch wenn wir <span class="font-display italic font-normal text-butter-soft">geschlossen</span> haben.
+        Auch wenn wir <span class="font-display italic font-normal text-red-soft">geschlossen</span> haben.
       </h2>
       <p class="mt-5 text-lg text-stone-300 max-w-2xl leading-relaxed">
         Zwei Wege bringen unsere Theke zu Ihnen: warmes Mittagessen oder ein Korb voller Wurst-, Fleischwaren und Grundlebensmitteln. Außerdem unser Automat — direkt vor dem Laden, immer offen.
@@ -737,9 +783,9 @@
     <!-- Two service cards -->
     <div class="grid lg:grid-cols-3 gap-5 lg:gap-6 mb-16 lg:mb-20">
 
-      <div class="reveal card-dark p-8 md:p-10" style="background: linear-gradient(140deg, #2A1F1A 0%, #1A1310 100%);">
+      <div class="reveal card-dark p-8 md:p-10" style="background: linear-gradient(140deg, #1E40AF 0%, #0A1628 100%);">
         <div class="flex items-baseline justify-between mb-6 pb-6 border-b border-white/10">
-          <div class="text-[11px] uppercase tracking-[0.3em] text-butter-soft font-medium">Service 01</div>
+          <div class="text-[11px] uppercase tracking-[0.3em] text-red-soft font-medium">Service 01</div>
           <div class="font-mono text-[11px] tracking-[0.22em] uppercase text-stone-400">Mo – Sa</div>
         </div>
         <h3 class="font-display text-3xl md:text-4xl font-semibold tracking-tight">Mittagstisch-Lieferung</h3>
@@ -766,9 +812,9 @@
         </a>
       </div>
 
-      <div class="reveal card-dark p-8 md:p-10" style="background: linear-gradient(140deg, #3A0F0F 0%, #1A1310 100%); --reveal-delay: 100ms;">
+      <div class="reveal card-dark p-8 md:p-10" style="background: linear-gradient(140deg, #991B1B 0%, #0A1628 100%); --reveal-delay: 100ms;">
         <div class="flex items-baseline justify-between mb-6 pb-6 border-b border-white/10">
-          <div class="text-[11px] uppercase tracking-[0.3em] text-butter-soft font-medium">Service 02</div>
+          <div class="text-[11px] uppercase tracking-[0.3em] text-red-soft font-medium">Service 02</div>
           <div class="font-mono text-[11px] tracking-[0.22em] uppercase text-stone-400">Nach Vereinbarung</div>
         </div>
         <h3 class="font-display text-3xl md:text-4xl font-semibold tracking-tight">Lebensmittelservice</h3>
@@ -789,15 +835,15 @@
           </div>
         </div>
 
-        <a href="tel:+4968345113" class="btn mt-8 w-full" style="background: var(--butter); color: white;">
+        <a href="tel:+4968345113" class="btn mt-8 w-full" style="background: var(--red); color: white;">
           Bestellen · 0 68 34 / 5 11 13
           <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
 
-      <div class="reveal card-dark p-8 md:p-10" style="background: linear-gradient(140deg, #3A2A0F 0%, #1A1310 100%); --reveal-delay: 200ms;">
+      <div class="reveal card-dark p-8 md:p-10" style="background: linear-gradient(140deg, #172554 0%, #0A1628 100%); --reveal-delay: 200ms;">
         <div class="flex items-baseline justify-between mb-6 pb-6 border-b border-white/10">
-          <div class="text-[11px] uppercase tracking-[0.3em] text-butter-soft font-medium">Service 03</div>
+          <div class="text-[11px] uppercase tracking-[0.3em] text-red-soft font-medium">Service 03</div>
           <div class="font-mono text-[11px] tracking-[0.22em] uppercase text-stone-400">Auf Vorbestellung</div>
         </div>
         <h3 class="font-display text-3xl md:text-4xl font-semibold tracking-tight">Partyservice</h3>
@@ -831,11 +877,11 @@
       <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-end mb-10">
         <div class="lg:col-span-7">
           <div class="flex items-baseline gap-3 mb-3">
-            <span class="font-display italic font-semibold text-3xl text-butter-soft leading-none">24/7</span>
+            <span class="font-display italic font-semibold text-3xl text-red-soft leading-none">24/7</span>
             <span class="text-[11px] uppercase tracking-[0.3em] text-stone-400 font-medium">Automat</span>
           </div>
           <h3 class="text-2xl md:text-4xl font-semibold tracking-[-0.025em] leading-[1.1] text-bg-warm">
-            Direkt vor unserem Laden — <span class="font-display italic font-normal text-butter-soft">immer offen.</span>
+            Direkt vor unserem Laden — <span class="font-display italic font-normal text-red-soft">immer offen.</span>
           </h3>
         </div>
         <div class="lg:col-span-5">
@@ -880,6 +926,11 @@
     <div class="noise-overlay opacity-25"></div>
   </div>
 
+  <!-- Backdrop number: 24 (Hauptstraße 24) -->
+  <div aria-hidden="true" class="absolute -right-[6vw] -bottom-[8vw] backdrop-number text-[42vw] lg:text-[30vw] font-display select-none pointer-events-none z-0">
+    24
+  </div>
+
   <div class="relative z-10 max-w-7xl mx-auto">
 
     <div class="reveal mb-14 md:mb-16 max-w-3xl">
@@ -889,7 +940,7 @@
       </div>
       <h2 class="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-[3.6rem] lg:leading-[1] font-semibold text-ink tracking-[-0.035em]">
         Hauptstraße 24.
-        <span class="font-display italic font-normal text-oxblood-deep">Seit 122 Jahren</span> dieselbe Tür.
+        <span class="font-display italic font-normal text-blue-deep">Seit 122 Jahren</span> dieselbe Tür.
       </h2>
     </div>
 
@@ -930,12 +981,12 @@
 
           <div class="mt-7 pt-7 border-t border-stone-200">
             <div class="text-[11px] uppercase tracking-[0.3em] text-stone-500 font-medium mb-3">Telefon</div>
-            <a href="tel:+4968345113" class="font-display text-2xl font-semibold text-oxblood hover:text-oxblood-dark transition-colors">0 68 34 / 5 11 13</a>
+            <a href="tel:+4968345113" class="font-display text-2xl font-semibold text-blue hover:text-blue-dark transition-colors">0 68 34 / 5 11 13</a>
           </div>
 
           <div class="mt-7 pt-7 border-t border-stone-200">
             <div class="text-[11px] uppercase tracking-[0.3em] text-stone-500 font-medium mb-3">E-Mail</div>
-            <a href="mailto:metzgereijochem@aol.com" class="font-display text-lg font-semibold text-ink hover:text-oxblood transition-colors break-all">metzgereijochem@aol.com</a>
+            <a href="mailto:metzgereijochem@aol.com" class="font-display text-lg font-semibold text-ink hover:text-blue transition-colors break-all">metzgereijochem@aol.com</a>
           </div>
 
           <div class="mt-7 pt-7 border-t border-stone-200">
@@ -966,7 +1017,7 @@
 <!-- =============================== FOOTER =============================== -->
 <footer class="bg-ink text-bg-warm relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute top-0 left-0 w-[50vw] h-[40vw]" style="background: radial-gradient(50% 50% at 30% 30%, rgba(139,36,36,0.15), transparent 70%);"></div>
+    <div class="absolute top-0 left-0 w-[50vw] h-[40vw]" style="background: radial-gradient(50% 50% at 30% 30%, rgba(30,58,138,0.18), transparent 70%);"></div>
     <div class="noise-overlay opacity-30"></div>
   </div>
 
@@ -982,7 +1033,7 @@
             </div>
             <div class="leading-tight">
               <div class="font-display text-4xl lg:text-5xl font-semibold tracking-tight">Jochem</div>
-              <div class="text-[11px] tracking-[0.22em] uppercase text-butter-soft font-medium mt-2">Metzgerei · Schwalbach · 1902</div>
+              <div class="text-[11px] tracking-[0.22em] uppercase text-red-soft font-medium mt-2">Metzgerei · Schwalbach · 1902</div>
             </div>
           </div>
         </div>
@@ -999,49 +1050,49 @@
     <div class="pt-14 grid grid-cols-2 lg:grid-cols-12 gap-10">
 
       <div class="lg:col-span-3">
-        <div class="text-[11px] uppercase tracking-[0.22em] text-butter-soft font-medium mb-5">Sortiment</div>
+        <div class="text-[11px] uppercase tracking-[0.22em] text-red-soft font-medium mb-5">Sortiment</div>
         <ul class="space-y-2.5 text-stone-300 text-sm">
-          <li><a href="#sortiment" class="hover:text-butter-soft transition-colors">Delikatess-Leberwurst</a></li>
-          <li><a href="#sortiment" class="hover:text-butter-soft transition-colors">Haussalami</a></li>
-          <li><a href="#sortiment" class="hover:text-butter-soft transition-colors">Farmerschinken</a></li>
-          <li><a href="#sortiment" class="hover:text-butter-soft transition-colors">Lyoner im Ring</a></li>
-          <li><a href="tel:+4968345113" class="hover:text-butter-soft transition-colors">Weitere Spezialitäten →</a></li>
+          <li><a href="#sortiment" class="hover:text-red-soft transition-colors">Delikatess-Leberwurst</a></li>
+          <li><a href="#sortiment" class="hover:text-red-soft transition-colors">Haussalami</a></li>
+          <li><a href="#sortiment" class="hover:text-red-soft transition-colors">Farmerschinken</a></li>
+          <li><a href="#sortiment" class="hover:text-red-soft transition-colors">Lyoner im Ring</a></li>
+          <li><a href="tel:+4968345113" class="hover:text-red-soft transition-colors">Weitere Spezialitäten →</a></li>
         </ul>
       </div>
 
       <div class="lg:col-span-3">
-        <div class="text-[11px] uppercase tracking-[0.22em] text-butter-soft font-medium mb-5">Service</div>
+        <div class="text-[11px] uppercase tracking-[0.22em] text-red-soft font-medium mb-5">Service</div>
         <ul class="space-y-2.5 text-stone-300 text-sm">
-          <li><a href="#mittagstisch" class="hover:text-butter-soft transition-colors">Mittagstisch</a></li>
-          <li><a href="#service"      class="hover:text-butter-soft transition-colors">Lieferservice</a></li>
-          <li><a href="#service"      class="hover:text-butter-soft transition-colors">24-Std Automat</a></li>
-          <li><a href="#geschichte"   class="hover:text-butter-soft transition-colors">Geschichte</a></li>
-          <li><a href="#auszeichnungen" class="hover:text-butter-soft transition-colors">Auszeichnungen</a></li>
+          <li><a href="#mittagstisch" class="hover:text-red-soft transition-colors">Mittagstisch</a></li>
+          <li><a href="#service"      class="hover:text-red-soft transition-colors">Lieferservice</a></li>
+          <li><a href="#service"      class="hover:text-red-soft transition-colors">24-Std Automat</a></li>
+          <li><a href="#geschichte"   class="hover:text-red-soft transition-colors">Geschichte</a></li>
+          <li><a href="#auszeichnungen" class="hover:text-red-soft transition-colors">Auszeichnungen</a></li>
         </ul>
       </div>
 
       <div class="lg:col-span-3">
-        <div class="text-[11px] uppercase tracking-[0.22em] text-butter-soft font-medium mb-5">Kontakt</div>
+        <div class="text-[11px] uppercase tracking-[0.22em] text-red-soft font-medium mb-5">Kontakt</div>
         <ul class="space-y-2.5 text-stone-300 text-sm">
-          <li><a href="tel:+4968345113"             class="hover:text-butter-soft transition-colors">0 68 34 / 5 11 13</a></li>
-          <li><a href="mailto:metzgereijochem@aol.com" class="hover:text-butter-soft transition-colors break-all">metzgereijochem@aol.com</a></li>
+          <li><a href="tel:+4968345113"             class="hover:text-red-soft transition-colors">0 68 34 / 5 11 13</a></li>
+          <li><a href="mailto:metzgereijochem@aol.com" class="hover:text-red-soft transition-colors break-all">metzgereijochem@aol.com</a></li>
           <li class="text-stone-400 pt-2 leading-relaxed">
             Hauptstraße 24<br>
             66773 Schwalbach
           </li>
         </ul>
         <div class="mt-5 flex items-center gap-3">
-          <a href="#" aria-label="Facebook" class="w-9 h-9 grid place-items-center border border-white/15 rounded-full hover:border-butter-soft hover:text-butter-soft transition-colors">
+          <a href="#" aria-label="Facebook" class="w-9 h-9 grid place-items-center border border-white/15 rounded-full hover:border-red-soft hover:text-red-soft transition-colors">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.55 9.88v-6.99H7.9V12h2.55V9.8c0-2.52 1.5-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.57V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
           </a>
-          <a href="#" aria-label="Instagram" class="w-9 h-9 grid place-items-center border border-white/15 rounded-full hover:border-butter-soft hover:text-butter-soft transition-colors">
+          <a href="#" aria-label="Instagram" class="w-9 h-9 grid place-items-center border border-white/15 rounded-full hover:border-red-soft hover:text-red-soft transition-colors">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
           </a>
         </div>
       </div>
 
       <div class="lg:col-span-3">
-        <div class="text-[11px] uppercase tracking-[0.22em] text-butter-soft font-medium mb-5">Öffnungszeiten</div>
+        <div class="text-[11px] uppercase tracking-[0.22em] text-red-soft font-medium mb-5">Öffnungszeiten</div>
         <ul class="space-y-2 text-sm text-stone-300">
           <li class="flex justify-between"><span>Mo · Mi</span><span class="font-mono">07:30 – 12:30</span></li>
           <li class="flex justify-between"><span>Di · Do</span><span class="font-mono">+ 14:30 – 18:00</span></li>
@@ -1063,9 +1114,9 @@
         &copy; <span data-year>2026</span> Jochem GmbH Metzgerei und Lebensmittel
       </div>
       <div class="flex items-center gap-6 text-sm">
-        <a href="impressum.html"        class="text-stone-400 hover:text-butter-soft transition-colors">Impressum</a>
-        <a href="datenschutz.html"      class="text-stone-400 hover:text-butter-soft transition-colors">Datenschutz</a>
-        <a href="barrierefreiheit.html" class="text-stone-400 hover:text-butter-soft transition-colors">Barrierefreiheit</a>
+        <a href="impressum.html"        class="text-stone-400 hover:text-red-soft transition-colors">Impressum</a>
+        <a href="datenschutz.html"      class="text-stone-400 hover:text-red-soft transition-colors">Datenschutz</a>
+        <a href="barrierefreiheit.html" class="text-stone-400 hover:text-red-soft transition-colors">Barrierefreiheit</a>
       </div>
     </div>
 
