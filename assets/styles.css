@@ -1,0 +1,480 @@
+/* Metzgerei Jochem — Heritage Editorial */
+
+:root {
+  --ink:        #1A1410;
+  --paper:      #F5EFE0;
+  --cream:      #EBE2C9;
+  --sand:       #E0D4B5;
+  --burgundy:   #6B1B1B;
+  --burgundy-d: #4A0F0F;
+  --gold:       #B8893E;
+  --gold-l:     #D4AF6B;
+  --rule:       #C9BEA1;
+  --mute:       #6B5E50;
+  --whisper:    #8B7E6D;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-feature-settings: "ss01";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* ---------- Typography ---------- */
+.font-display { font-family: 'Cormorant Garamond', 'Times New Roman', serif; }
+.font-mono    { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+.display-xl {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 0.92;
+}
+.display-italic {
+  font-style: italic;
+  font-weight: 500;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--burgundy);
+}
+
+.eyebrow-mute { color: var(--mute); }
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+.smallcaps {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+}
+
+/* Roman numerals for section markers */
+.roman {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-feature-settings: "smcp", "tnum";
+}
+
+/* ---------- Decorative ---------- */
+.rule-h { height: 1px; background: var(--rule); width: 100%; }
+.rule-double {
+  border-top: 3px double var(--rule);
+}
+.rule-burgundy { background: var(--burgundy); height: 2px; width: 80px; }
+
+/* Paper grain — warmer than RSA, more "old-world" */
+.grain::before {
+  content: "";
+  position: absolute; inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.8'/></svg>");
+}
+
+/* Hero atmosphere — warm vignette + subtle texture */
+.hero-atmosphere {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(70% 50% at 50% 0%, rgba(184,137,62,0.10) 0%, transparent 60%),
+    radial-gradient(45% 35% at 0% 100%, rgba(107,27,27,0.08) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(245,239,224,0) 0%, rgba(235,226,201,0.6) 100%);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.95rem 1.6rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1), background 220ms, color 220ms, box-shadow 220ms;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--burgundy);
+  color: var(--paper);
+}
+.btn-primary:hover {
+  background: var(--burgundy-d);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px -12px rgba(74,15,15,0.55);
+}
+.btn-primary .btn-arrow { transition: transform 240ms cubic-bezier(0.2,0.7,0.2,1); }
+.btn-primary:hover .btn-arrow { transform: translateX(3px); }
+
+.btn-ink { background: var(--ink); color: var(--paper); }
+.btn-ink:hover { background: #2A1F18; transform: translateY(-1px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+}
+.btn-outline:hover { background: var(--ink); color: var(--paper); transform: translateY(-1px); }
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--ink);
+}
+.btn-gold:hover { background: var(--gold-l); transform: translateY(-1px); }
+
+.btn-ghost-paper {
+  background: transparent;
+  color: var(--paper);
+  border: 1.5px solid var(--paper);
+}
+.btn-ghost-paper:hover { background: var(--paper); color: var(--ink); }
+
+/* Editorial underlined link */
+.link-underline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-bottom: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform-origin: left;
+  transition: transform 320ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.link-underline:hover::after { transform: scaleX(0.6); transform-origin: right; }
+
+/* ---------- Award Medal (SVG-styled CSS) ---------- */
+.medal {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+}
+.medal-circle {
+  position: relative;
+  width: 88%;
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 30% 30%, #E2C383 0%, var(--gold) 40%, #8A6328 100%);
+  display: grid;
+  place-items: center;
+  box-shadow:
+    inset 0 0 0 6px rgba(255,255,255,0.18),
+    inset 0 0 0 8px rgba(0,0,0,0.10),
+    0 18px 36px -20px rgba(74,15,15,0.45);
+}
+.medal-circle::before {
+  content: "";
+  position: absolute;
+  inset: 14%;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.35);
+}
+.medal-inner {
+  text-align: center;
+  color: var(--burgundy-d);
+  font-family: 'Cormorant Garamond', serif;
+  position: relative; z-index: 1;
+}
+.medal-text-top {
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.medal-gold {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0.15rem 0;
+}
+.medal-year {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+}
+/* Ribbon under medal */
+.medal-ribbon {
+  position: absolute;
+  bottom: -8%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--burgundy);
+  color: var(--paper);
+  padding: 0.35rem 0.9rem 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 8% 100%);
+  white-space: nowrap;
+}
+
+/* ---------- Section labels ---------- */
+.section-label {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+.section-label .roman-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--burgundy);
+}
+.section-label .label-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.section-label .accent-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+  max-width: 120px;
+}
+
+/* ---------- Editorial Drop Cap ---------- */
+.dropcap::first-letter {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  float: left;
+  font-size: 4.5rem;
+  line-height: 0.85;
+  padding: 0.4rem 0.7rem 0 0;
+  color: var(--burgundy);
+  font-style: italic;
+}
+
+/* ---------- Pull Quote ---------- */
+.pull-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+/* ---------- Cards ---------- */
+.product-card {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+  transition: transform 360ms cubic-bezier(0.2,0.7,0.2,1), box-shadow 360ms, border-color 360ms;
+}
+.product-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--burgundy);
+  box-shadow: 0 24px 40px -28px rgba(74,15,15,0.35);
+}
+.product-image {
+  aspect-ratio: 4/3;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.product-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(26,20,16,0.3) 0%, transparent 50%);
+}
+.product-gold-tag {
+  position: absolute;
+  top: 0.8rem; left: 0.8rem;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  z-index: 1;
+}
+
+/* ---------- Automat list chips ---------- */
+.chip {
+  display: inline-flex;
+  padding: 0.4rem 0.85rem;
+  background: rgba(245,239,224,0.08);
+  border: 1px solid rgba(245,239,224,0.15);
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  color: var(--paper);
+  transition: background 240ms, border-color 240ms;
+}
+.chip:hover { background: rgba(245,239,224,0.15); border-color: var(--gold); }
+
+/* ---------- Hours table ---------- */
+.hours-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 1rem 0;
+  align-items: baseline;
+  border-bottom: 1px solid var(--rule);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+}
+.hours-row:last-child { border-bottom: 0; }
+.hours-row .day { font-style: italic; color: var(--mute); }
+.hours-row .time { font-feature-settings: "tnum"; color: var(--ink); font-weight: 500; }
+.hours-row.closed .time { color: var(--burgundy); font-style: italic; }
+
+/* ---------- Live availability ---------- */
+.live-dot {
+  width: 8px; height: 8px;
+  border-radius: 9999px;
+  background: #5DA85F;
+  position: relative;
+  display: inline-block;
+}
+.live-dot::after {
+  content: "";
+  position: absolute; inset: -4px;
+  border-radius: 9999px;
+  background: #5DA85F;
+  opacity: 0.4;
+  animation: pulse 2.4s ease-out infinite;
+}
+@keyframes pulse {
+  0%   { transform: scale(0.6); opacity: 0.55; }
+  70%  { transform: scale(1.8); opacity: 0; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* ---------- Timeline ---------- */
+.timeline-line {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 1px;
+  background: var(--rule);
+}
+.timeline-dot {
+  width: 12px; height: 12px;
+  border-radius: 9999px;
+  background: var(--burgundy);
+  border: 3px solid var(--paper);
+  box-shadow: 0 0 0 1px var(--burgundy);
+  margin-left: -6px;
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms cubic-bezier(0.2,0.7,0.2,1), transform 700ms cubic-bezier(0.2,0.7,0.2,1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ---------- Mobile menu ---------- */
+.mobile-panel {
+  position: fixed;
+  inset: 0;
+  background: var(--paper);
+  z-index: 80;
+  transform: translateX(100%);
+  transition: transform 360ms cubic-bezier(0.2,0.7,0.2,1);
+}
+.mobile-panel.open { transform: translateX(0); }
+
+/* ---------- Header ---------- */
+.header-scrolled {
+  background: rgba(245, 239, 224, 0.92);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 var(--rule);
+}
+
+/* ---------- Photo panel with scrim ---------- */
+.photo-panel {
+  position: relative;
+  background-color: var(--ink);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.photo-panel::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg,
+      rgba(26,20,16,0.45) 0%,
+      rgba(26,20,16,0.15) 35%,
+      rgba(26,20,16,0.40) 60%,
+      rgba(26,20,16,0.90) 100%);
+  pointer-events: none;
+}
+.photo-panel > * { position: relative; z-index: 1; }
+
+/* ---------- Award seal placement helper ---------- */
+.seal-spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 50%,
+      rgba(184,137,62,0.12) 0%,
+      transparent 50%);
+}
+
+/* ---------- Decorative ornament ---------- */
+.ornament {
+  display: inline-block;
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.2em;
+  margin: 0 0.4rem;
+  vertical-align: 0.05em;
+}
+
+/* ---------- Focus ---------- */
+:focus-visible {
+  outline: 2px solid var(--burgundy);
+  outline-offset: 3px;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal.in { opacity: 1; transform: none; transition: none; }
+  .live-dot::after { animation: none; }
+  * { transition-duration: 0.01ms !important; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .display-xl { font-size: clamp(2.8rem, 11vw, 4.5rem); }
+  .dropcap::first-letter { font-size: 3.2rem; }
+}
