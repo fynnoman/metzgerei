@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Barrierefreiheitserklärung — Metzgerei Jochem</title>
+<title>Barrierefreiheit — Jochem GmbH</title>
 <meta name="description" content="Barrierefreiheitserklärung der Jochem GmbH gemäß BFSG.">
 <meta name="robots" content="noindex,follow">
 
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -18,13 +18,13 @@
     theme: {
       extend: {
         colors: {
-          ink: '#1A1410', paper: '#F5EFE0', cream: '#EBE2C9',
-          rule: '#C9BEA1', mute: '#6B5E50',
-          burgundy: '#6B1B1B', gold: '#B8893E', 'gold-l': '#D4AF6B',
+          'bg-dark': '#0F0C0A', 'bg-deeper': '#060503', 'bg-charcoal': '#1A1612',
+          surface: '#F5EFE0', warm: '#F0E6D2',
+          gold: '#E8AC4A', 'gold-deep': '#B8893E',
+          ember: '#D43838', burgundy: '#8B1F1F',
         },
         fontFamily: {
-          display: ['Cormorant Garamond','serif'],
-          sans: ['Manrope','sans-serif'],
+          display: ['Hanken Grotesk','sans-serif'], sans: ['Hanken Grotesk','sans-serif'],
           mono: ['JetBrains Mono','monospace'],
         },
         maxWidth: { 'container': '1320px' },
@@ -35,92 +35,91 @@
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 
-<body class="bg-paper text-ink">
+<body class="bg-bg-dark text-warm">
 
-<header data-header class="sticky top-0 z-40 bg-paper/85 backdrop-blur-md border-b border-rule">
+<header data-header class="header">
   <div class="max-w-container mx-auto px-6 lg:px-10">
-    <div class="flex items-center justify-between h-[96px]">
-      <a href="index.html" class="flex flex-col leading-none">
-        <span class="text-gold text-[0.7rem] tracking-[0.5em] mb-1.5 select-none">✦ ✦ ✦</span>
-        <span class="font-display text-[2.1rem] md:text-[2.4rem] font-medium tracking-[0.14em] text-ink leading-none">JOCHEM</span>
-        <span class="font-mono text-[0.6rem] tracking-[0.28em] text-burgundy uppercase mt-2">Metzgerei <span class="text-gold mx-1">·</span> seit 1902</span>
+    <div class="flex items-center justify-between h-[88px]">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-full border border-warm/30 grid place-items-center group-hover:border-gold transition-colors">
+          <span class="font-display italic text-warm text-2xl leading-none mt-0.5">J</span>
+        </div>
+        <div class="leading-tight">
+          <div class="font-display text-warm font-bold tracking-[0.06em] text-lg leading-none">JOCHEM</div>
+          <div class="font-mono text-[0.62rem] tracking-[0.22em] text-gold mt-1 uppercase">Seit 1902</div>
+        </div>
       </a>
-      <a href="index.html" class="link-underline text-ink">← Zur Startseite</a>
+      <a href="index.html" class="font-mono text-[0.78rem] tracking-[0.18em] uppercase text-warm/80 hover:text-gold transition-colors">← Startseite</a>
     </div>
   </div>
 </header>
 
 <main>
 
-<section class="border-b border-rule grain relative">
-  <div class="hero-atmosphere"></div>
-  <div class="relative max-w-container mx-auto px-6 lg:px-10 pt-16 lg:pt-24 pb-12 lg:pb-16">
-    <div class="section-label mb-10">
-      <span class="roman-num">§.</span>
-      <span class="label-text">Rechtliches</span>
-      <span class="accent-rule"></span>
+<section class="section-pad border-b border-warm/10 relative overflow-hidden grain">
+  <div class="aura-amber"></div>
+  <div class="relative max-w-container mx-auto px-6 lg:px-10">
+    <div class="section-label">
+      <span class="label-num">§ / Rechtliches</span>
+      <span class="label-rule"></span>
     </div>
-    <h1 class="display-xl text-[clamp(2.5rem,7vw,5.5rem)]">
-      Barrierefreiheit.
-    </h1>
-    <p class="mt-6 font-mono text-[0.72rem] tracking-[0.22em] uppercase text-mute">
-      Erklärung gemäß BFSG &amp; EU 2019 / 882
-    </p>
+    <h1 class="h-section mt-4">Barrierefreiheit.</h1>
+    <p class="mt-6 font-mono text-[0.74rem] tracking-[0.22em] uppercase text-warm/60">Erklärung gemäß BFSG &amp; EU 2019 / 882</p>
   </div>
 </section>
 
-<section>
-  <div class="max-w-container mx-auto px-6 lg:px-10 py-16 lg:py-24">
-    <div class="max-w-2xl space-y-12">
+<section class="section-pad">
+  <div class="max-w-container mx-auto px-6 lg:px-10">
+    <div class="max-w-2xl space-y-14">
 
       <div>
-        <h2 class="font-display text-3xl tracking-tight mb-5 pb-3 border-b border-burgundy">Unser Anspruch</h2>
-        <p class="text-mute leading-[1.7]">
+        <h2 class="h-card mb-6 pb-4 border-b border-gold/40">Unser Anspruch</h2>
+        <p class="text-warm/75 leading-relaxed">
           Die Jochem GmbH ist bemüht, ihre Website und ihren Mittagstisch- &amp; Lieferservice für möglichst viele Menschen zugänglich zu gestalten — unabhängig von technischen oder körperlichen Voraussetzungen. Wir orientieren uns an den Web Content Accessibility Guidelines (WCAG) 2.1 Stufe AA.
         </p>
       </div>
 
       <div>
-        <h2 class="font-display text-3xl tracking-tight mb-5 pb-3 border-b border-burgundy">Stand der Vereinbarkeit</h2>
-        <p class="text-mute leading-[1.7] mb-4">
+        <h2 class="h-card mb-6 pb-4 border-b border-gold/40">Stand der Vereinbarkeit</h2>
+        <p class="text-warm/75 leading-relaxed mb-4">
           Diese Website wurde noch nicht förmlich auf Barrierefreiheit auditiert. Eine vollständige Konformitätserklärung wird nach einem externen Accessibility-Audit ergänzt.
         </p>
-        <p class="text-mute leading-[1.7]">
-          <span class="italic">(Detailangaben zur Konformität — Stufe AA, teilweise konform, nicht konform — werden hier nach Audit ergänzt.)</span>
+        <p class="text-warm/75 leading-relaxed">
+          <span class="italic text-warm/55">(Detailangaben zur Konformität werden nach Audit ergänzt.)</span>
         </p>
       </div>
 
       <div>
-        <h2 class="font-display text-3xl tracking-tight mb-5 pb-3 border-b border-burgundy">Bekannte Einschränkungen</h2>
-        <ul class="space-y-2 text-mute leading-[1.7] list-disc pl-6">
+        <h2 class="h-card mb-6 pb-4 border-b border-gold/40">Bekannte Einschränkungen</h2>
+        <ul class="space-y-2 text-warm/75 leading-relaxed list-disc pl-6">
           <li>Einzelne Schmuckbilder besitzen aktuell noch keinen ausführlichen Alternativtext.</li>
-          <li>Eine Tastatur-Navigation ist möglich, wurde aber noch nicht voll auditiert.</li>
+          <li>Die Tastatur-Navigation ist möglich, wurde aber noch nicht voll auditiert.</li>
           <li>Die mobile Version befindet sich im Feinschliff.</li>
         </ul>
       </div>
 
       <div>
-        <h2 class="font-display text-3xl tracking-tight mb-5 pb-3 border-b border-burgundy">Feedback &amp; Kontaktinformationen</h2>
-        <p class="text-mute leading-[1.7] mb-4">
+        <h2 class="h-card mb-6 pb-4 border-b border-gold/40">Feedback &amp; Kontaktinformationen</h2>
+        <p class="text-warm/75 leading-relaxed mb-5">
           Sollten Sie auf Barrieren stoßen oder Informationen in anderer Form benötigen, sprechen Sie uns gerne an:
         </p>
-        <div class="bg-cream border border-rule p-6 space-y-2 text-mute leading-[1.7]">
-          <p class="text-ink font-medium">Jochem GmbH Metzgerei und Lebensmittel</p>
+        <div class="bg-bg-charcoal border border-warm/10 rounded-2xl p-6 space-y-2 text-warm/75 leading-relaxed">
+          <p class="text-warm font-medium">Jochem GmbH Metzgerei und Lebensmittel</p>
           <p>Hauptstraße 24, 66773 Schwalbach</p>
-          <p>Telefon: <a href="tel:+4968345113" class="text-ink link-underline !text-[1rem] !font-sans !normal-case !tracking-normal">0 68 34 / 5 11 13</a></p>
-          <p>E-Mail: <a href="mailto:metzgereijochem@aol.com" class="text-ink link-underline !text-[1rem] !font-sans !normal-case !tracking-normal">metzgereijochem@aol.com</a></p>
+          <p>Telefon: <a href="tel:+4968345113" class="text-warm hover:text-gold transition-colors">0 68 34 / 5 11 13</a></p>
+          <p>E-Mail: <a href="mailto:metzgereijochem@aol.com" class="text-warm hover:text-gold transition-colors">metzgereijochem@aol.com</a></p>
         </div>
       </div>
 
       <div>
-        <h2 class="font-display text-3xl tracking-tight mb-5 pb-3 border-b border-burgundy">Durchsetzungsverfahren</h2>
-        <p class="text-mute leading-[1.7]">
+        <h2 class="h-card mb-6 pb-4 border-b border-gold/40">Durchsetzungsverfahren</h2>
+        <p class="text-warm/75 leading-relaxed">
           Sollten Sie auf eine Anfrage zur Barrierefreiheit von uns keine zufriedenstellende Antwort erhalten, können Sie sich an die zuständige Marktüberwachungsbehörde des Saarlandes wenden.
         </p>
       </div>
 
-      <div class="pt-8 border-t border-rule">
-        <p class="font-mono text-[0.72rem] tracking-[0.2em] uppercase text-mute">
+      <div class="pt-10 border-t border-warm/10">
+        <p class="font-mono text-[0.7rem] tracking-[0.2em] uppercase text-warm/45">
           Stand: <span data-year>2026</span>. ⚠ Vorlage — nach Audit ergänzen und durch Rechtsbeistand prüfen lassen.
         </p>
       </div>
@@ -131,15 +130,19 @@
 
 </main>
 
-<footer class="bg-ink text-paper">
+<footer class="section-deeper border-t border-warm/10">
   <div class="max-w-container mx-auto px-6 lg:px-10 py-12">
     <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-      <a href="index.html" class="flex flex-col leading-none">
-        <span class="text-gold text-[0.65rem] tracking-[0.5em] select-none">✦ ✦ ✦</span>
-        <span class="font-display text-2xl font-medium tracking-[0.14em] mt-1">JOCHEM</span>
-        <span class="font-mono text-[0.55rem] tracking-[0.26em] text-gold-l uppercase mt-1.5">Metzgerei · seit 1902</span>
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full border border-warm/30 grid place-items-center">
+          <span class="font-display italic text-warm text-xl leading-none mt-0.5">J</span>
+        </div>
+        <div class="leading-tight">
+          <div class="font-display text-warm font-bold tracking-[0.06em] text-base leading-none">JOCHEM</div>
+          <div class="font-mono text-[0.58rem] tracking-[0.22em] text-gold mt-1 uppercase">Seit 1902</div>
+        </div>
       </a>
-      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-[0.82rem] text-paper/60">
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-warm/55">
         <span>&copy; <span data-year>2026</span> Jochem GmbH</span>
         <a href="impressum.html"        class="hover:text-gold">Impressum</a>
         <a href="datenschutz.html"      class="hover:text-gold">Datenschutz</a>

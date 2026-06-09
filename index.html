@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Metzgerei Jochem — Vier Generationen Handwerk seit 1902 · Schwalbach</title>
-<meta name="description" content="Traditionsmetzgerei Jochem in Schwalbach, gegründet 1902 — vom Feinschmecker-Magazin 2023 unter die 500 besten Metzgereien Deutschlands gewählt. Vier Gold-Auszeichnungen Meisterstücke 2023.">
-<meta name="theme-color" content="#6B1B1B">
+<title>Jochem — Metzgerei seit 1902 · Top 500 Deutschlands</title>
+<meta name="description" content="Metzgerei Jochem in Schwalbach — vier Generationen Handwerk seit 1902, vier Gold-Auszeichnungen 2023, vom Feinschmecker unter die 500 besten Metzgereien Deutschlands gewählt.">
+<meta name="theme-color" content="#0F0C0A">
 
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -19,21 +19,23 @@
     theme: {
       extend: {
         colors: {
-          ink:        '#1A1410',
-          paper:      '#F5EFE0',
-          cream:      '#EBE2C9',
-          sand:       '#E0D4B5',
-          rule:       '#C9BEA1',
-          mute:       '#6B5E50',
-          whisper:    '#8B7E6D',
-          burgundy:   '#6B1B1B',
-          'burgundy-d': '#4A0F0F',
-          gold:       '#B8893E',
-          'gold-l':   '#D4AF6B',
+          'bg-dark':     '#0F0C0A',
+          'bg-deeper':   '#060503',
+          'bg-charcoal': '#1A1612',
+          surface:       '#F5EFE0',
+          'surface-2':   '#E8DFC9',
+          warm:          '#F0E6D2',
+          muted:         'rgba(245,239,224,0.62)',
+          gold:          '#E8AC4A',
+          'gold-deep':   '#B8893E',
+          ember:         '#D43838',
+          burgundy:      '#8B1F1F',
+          rust:          '#C04020',
+          copper:        '#B36240',
         },
         fontFamily: {
-          display: ['Cormorant Garamond', 'serif'],
-          sans:    ['Manrope', 'sans-serif'],
+          display: ['Hanken Grotesk', 'sans-serif'],
+          sans:    ['Hanken Grotesk', 'sans-serif'],
           mono:    ['JetBrains Mono', 'monospace'],
         },
         maxWidth: { 'container': '1320px' },
@@ -41,71 +43,46 @@
     }
   }
 </script>
-
 <link rel="stylesheet" href="assets/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/motion@10.18.0/dist/motion.min.js"></script>
 </head>
 
-<body class="bg-paper text-ink antialiased">
+<body class="bg-bg-dark text-warm">
 
-<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:bg-ink focus:text-paper focus:px-3 focus:py-2 focus:rounded z-50">Zum Inhalt springen</a>
-
-<!-- ============================== TOP UTILITY ============================== -->
-<div class="hidden md:block bg-ink text-paper/85 text-[0.72rem]">
-  <div class="max-w-container mx-auto px-6 lg:px-10">
-    <div class="flex items-center justify-between h-9 font-mono tracking-[0.16em] uppercase">
-      <div class="flex items-center gap-5">
-        <a href="tel:+4968345113" class="hover:text-gold transition-colors">Tel · 0 68 34 / 5 11 13</a>
-        <span class="text-paper/30">·</span>
-        <span class="flex items-center gap-2">
-          <span class="live-dot"></span>
-          <span data-open-state>Heute geöffnet</span>
-        </span>
-      </div>
-      <div class="flex items-center gap-5">
-        <span>Hauptstr. 24 · 66773 Schwalbach</span>
-        <span class="text-paper/30">·</span>
-        <a href="#" aria-label="Facebook" class="hover:text-gold transition-colors">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.55 9.88v-6.99H7.9V12h2.55V9.8c0-2.52 1.5-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.57V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
-        </a>
-        <a href="#" aria-label="Instagram" class="hover:text-gold transition-colors">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:bg-warm focus:text-bg-dark focus:px-3 focus:py-2 focus:rounded z-50">Zum Inhalt</a>
 
 <!-- ============================== HEADER ============================== -->
-<header data-header class="sticky top-0 z-40 bg-paper/85 backdrop-blur-md border-b border-rule transition-all">
+<header data-header class="header">
   <div class="max-w-container mx-auto px-6 lg:px-10">
-    <div class="flex items-center justify-between h-[96px]">
+    <div class="flex items-center justify-between h-[88px]">
 
-      <!-- Brand mark -->
-      <a href="/" class="flex flex-col leading-none">
-        <span class="text-gold text-[0.7rem] tracking-[0.5em] mb-1.5 select-none">✦ ✦ ✦</span>
-        <span class="font-display text-[2.1rem] md:text-[2.4rem] font-medium tracking-[0.14em] text-ink leading-none">JOCHEM</span>
-        <span class="font-mono text-[0.6rem] tracking-[0.28em] text-burgundy uppercase mt-2">Metzgerei <span class="text-gold mx-1">·</span> seit 1902</span>
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-full border border-warm/30 grid place-items-center group-hover:border-gold transition-colors">
+          <span class="font-display italic text-warm text-2xl leading-none mt-0.5">J</span>
+        </div>
+        <div class="leading-tight">
+          <div class="font-display text-warm font-bold tracking-[0.06em] text-lg leading-none">JOCHEM</div>
+          <div class="font-mono text-[0.62rem] tracking-[0.22em] text-gold mt-1 uppercase">Seit 1902</div>
+        </div>
       </a>
 
-      <!-- Desktop nav -->
-      <nav class="hidden lg:flex items-center gap-8 text-[0.88rem] font-medium tracking-wide">
-        <a href="#auszeichnungen" class="hover:text-burgundy transition-colors">Auszeichnungen</a>
-        <a href="#sortiment"      class="hover:text-burgundy transition-colors">Sortiment</a>
-        <a href="#mittagstisch"   class="hover:text-burgundy transition-colors">Mittagstisch</a>
-        <a href="#lieferservice"  class="hover:text-burgundy transition-colors">Lieferservice</a>
-        <a href="#automat"        class="hover:text-burgundy transition-colors">24h Automat</a>
-        <a href="#tradition"      class="hover:text-burgundy transition-colors">Tradition</a>
+      <!-- Nav -->
+      <nav class="hidden lg:flex items-center gap-9">
+        <a href="#auszeichnungen" class="nav-link">Auszeichnungen</a>
+        <a href="#sortiment"      class="nav-link">Sortiment</a>
+        <a href="#tradition"      class="nav-link">Tradition</a>
+        <a href="#automat"        class="nav-link">24 / 7</a>
+        <a href="#lieferung"      class="nav-link">Lieferung</a>
+        <a href="#besuch"         class="nav-link">Besuchen</a>
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="tel:+4968345113" class="btn btn-primary hidden sm:inline-flex">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:+4968345113" class="btn btn-primary !py-2.5 !px-5 text-[0.88rem]">
           Bestellen
+          <span class="arrow">→</span>
         </a>
-        <a href="tel:+4968345113" class="btn btn-primary sm:hidden !px-3">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </a>
-        <button data-menu-open class="lg:hidden p-2 -mr-2" aria-label="Menü">
+        <button data-menu-open class="lg:hidden p-2 -mr-2 text-warm" aria-label="Menü">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
         </button>
       </div>
@@ -117,205 +94,190 @@
 <main id="main">
 
 <!-- ============================== HERO ============================== -->
-<section class="relative overflow-hidden grain">
-  <div class="hero-atmosphere"></div>
-  <div class="relative max-w-container mx-auto px-6 lg:px-10 pt-16 lg:pt-24 pb-24 lg:pb-32">
+<section class="hero grain">
+  <div class="hero-bg">
+    <div data-parallax class="hero-image" style="background-image: url('https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=2000&q=85');"></div>
+  </div>
 
-    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+  <div class="hero-content max-w-container mx-auto px-6 lg:px-10 w-full pt-12 pb-20">
 
-      <div class="lg:col-span-7">
-        <div class="flex items-center gap-4 mb-10 reveal">
-          <span class="roman text-burgundy text-xl">I.</span>
-          <span class="font-mono text-[0.7rem] tracking-[0.24em] uppercase text-mute">Gegründet 11. November 1902 <span class="text-gold mx-1">·</span> Schwalbach</span>
-        </div>
-
-        <h1 class="display-xl text-[clamp(3rem,10vw,8rem)] reveal" style="--reveal-delay: 80ms;">
-          Vier <span class="display-italic">Generationen.</span><br>
-          Ein <span class="text-burgundy">Handwerk.</span>
-        </h1>
-
-        <p class="mt-10 max-w-xl text-[1.15rem] leading-[1.6] text-mute reveal" style="--reveal-delay: 160ms;">
-          Seit dem 11. November 1902 in der Hauptstraße. Vier Familiengenerationen, ein Anspruch — gewachsenes Fleisch, ehrliches Handwerk, Wurstrezepte, die wir nicht weggeben.
-        </p>
-
-        <div class="mt-12 flex flex-wrap items-center gap-5 reveal" style="--reveal-delay: 240ms;">
-          <a href="#sortiment" class="btn btn-primary">
-            Sortiment ansehen
-            <span class="btn-arrow">→</span>
-          </a>
-          <a href="tel:+4968345113" class="btn btn-outline">
-            Vorbestellen <span class="font-mono normal-case tracking-normal ml-1">0 68 34 / 5 11 13</span>
-          </a>
-        </div>
-
-      </div>
-
-      <!-- Hero photo with badge -->
-      <div class="lg:col-span-5 reveal" style="--reveal-delay: 200ms;">
-        <div class="relative">
-          <div class="aspect-[4/5] photo-panel" style="background-image: url('https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=1000&q=85');">
-            <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-8 flex items-end justify-between gap-4">
-              <div class="text-paper">
-                <div class="font-mono text-[0.65rem] tracking-[0.22em] uppercase text-gold-l mb-2">Hauptstraße 24</div>
-                <div class="font-display text-2xl italic">Schwalbach <span class="not-italic">·</span> Saarland</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Floating Feinschmecker badge -->
-          <div class="absolute -bottom-10 -left-6 lg:-left-10 bg-paper border border-rule p-5 lg:p-6 max-w-[280px] shadow-2xl">
-            <div class="flex items-baseline gap-2 mb-2">
-              <span class="font-mono text-[0.6rem] tracking-[0.22em] uppercase text-gold">Auszeichnung 2023</span>
-            </div>
-            <div class="font-display text-xl leading-[1.15] tracking-tight">
-              Vom <span class="italic text-burgundy">Feinschmecker</span> unter die <span class="font-semibold">500&nbsp;besten</span> Metzgereien Deutschlands gewählt.
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <!-- Status pill (live) -->
+    <div class="reveal mb-8 inline-flex items-center gap-3 px-4 py-2 rounded-full border border-warm/15 bg-warm/[0.04] backdrop-blur-sm">
+      <span class="live-dot" data-open-dot></span>
+      <span class="font-mono text-[0.72rem] tracking-[0.18em] uppercase text-warm" data-open-state>Heute geöffnet</span>
+      <span class="text-warm/30">·</span>
+      <span class="font-mono text-[0.72rem] tracking-[0.18em] uppercase text-warm/70">Schwalbach</span>
     </div>
 
-    <!-- Marquee statistics -->
-    <div class="mt-32 lg:mt-40 pt-10 border-t border-rule grid grid-cols-2 md:grid-cols-4 gap-8 reveal" style="--reveal-delay: 320ms;">
-      <div>
-        <div class="font-display text-5xl lg:text-6xl tabular leading-none">1902</div>
-        <div class="mt-3 font-mono text-[0.65rem] tracking-[0.22em] uppercase text-mute">Gegründet</div>
-      </div>
-      <div>
-        <div class="font-display text-5xl lg:text-6xl tabular leading-none">IV</div>
-        <div class="mt-3 font-mono text-[0.65rem] tracking-[0.22em] uppercase text-mute">Generationen</div>
-      </div>
-      <div>
-        <div class="font-display text-5xl lg:text-6xl tabular leading-none italic text-burgundy">4×</div>
-        <div class="mt-3 font-mono text-[0.65rem] tracking-[0.22em] uppercase text-mute">Gold 2023</div>
-      </div>
-      <div>
-        <div class="font-display text-5xl lg:text-6xl tabular leading-none">Top 500</div>
-        <div class="mt-3 font-mono text-[0.65rem] tracking-[0.22em] uppercase text-mute">Feinschmecker</div>
-      </div>
+    <!-- Massive headline -->
+    <h1 class="h-hero reveal" style="--reveal-delay: 100ms;">
+      Vier Generationen.<br>
+      <span class="text-gradient-amber">Ein Handwerk.</span>
+    </h1>
+
+    <p class="lead mt-8 max-w-2xl reveal" style="--reveal-delay: 200ms;">
+      Seit dem 11. November 1902 in der Hauptstraße in Schwalbach. Vier Familien­generationen, ein Anspruch — Hausrezepte, eigene Reifung, vier Gold-Auszeichnungen 2023.
+    </p>
+
+    <div class="mt-12 flex flex-wrap items-center gap-4 reveal" style="--reveal-delay: 300ms;">
+      <a href="tel:+4968345113" class="btn btn-amber btn-lg">
+        Bestellen <span class="font-mono text-[0.8em] tracking-normal opacity-80">· 0 68 34 / 5 11 13</span>
+      </a>
+      <a href="#sortiment" class="btn btn-ghost btn-lg">
+        Sortiment ansehen
+        <span class="arrow">→</span>
+      </a>
     </div>
 
+    <!-- Bottom signal row -->
+    <div class="absolute left-6 lg:left-10 right-6 lg:right-10 bottom-10 lg:bottom-14 flex flex-wrap items-end justify-between gap-6 reveal" style="--reveal-delay: 400ms;">
+      <div class="text-warm/60 text-sm">
+        <div class="font-mono text-[0.68rem] tracking-[0.22em] uppercase">Standort</div>
+        <div class="mt-1 text-warm">Hauptstraße 24 · 66773 Schwalbach</div>
+      </div>
+      <div class="hidden md:flex items-end gap-12">
+        <div>
+          <div class="font-display text-3xl font-bold text-warm leading-none">1902</div>
+          <div class="font-mono text-[0.66rem] tracking-[0.22em] uppercase text-warm/60 mt-1">Gegründet</div>
+        </div>
+        <div>
+          <div class="font-display text-3xl font-bold text-gold leading-none">4×</div>
+          <div class="font-mono text-[0.66rem] tracking-[0.22em] uppercase text-warm/60 mt-1">Gold 2023</div>
+        </div>
+        <div>
+          <div class="font-display text-3xl font-bold text-warm leading-none">Top 500</div>
+          <div class="font-mono text-[0.66rem] tracking-[0.22em] uppercase text-warm/60 mt-1">Feinschmecker</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TRUST MARQUEE ============================== -->
+<section class="section-dark border-y border-warm/8 py-10 lg:py-14 overflow-hidden">
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="marquee-item"><span class="text-gold">Feinschmecker Top 500</span><span class="dot"></span></div>
+      <div class="marquee-item"><span>Meisterstücke Gold 2023</span><span class="dot"></span></div>
+      <div class="marquee-item"><span class="text-gold">Saarländische Fleischerinnung</span><span class="dot"></span></div>
+      <div class="marquee-item"><span>Vier Generationen Handwerk</span><span class="dot"></span></div>
+      <div class="marquee-item"><span class="text-gold">Seit 11.&nbsp;11.&nbsp;1902</span><span class="dot"></span></div>
+      <div class="marquee-item"><span>Eigene Reifung</span><span class="dot"></span></div>
+      <!-- duplicate for seamless loop -->
+      <div class="marquee-item"><span class="text-gold">Feinschmecker Top 500</span><span class="dot"></span></div>
+      <div class="marquee-item"><span>Meisterstücke Gold 2023</span><span class="dot"></span></div>
+      <div class="marquee-item"><span class="text-gold">Saarländische Fleischerinnung</span><span class="dot"></span></div>
+      <div class="marquee-item"><span>Vier Generationen Handwerk</span><span class="dot"></span></div>
+      <div class="marquee-item"><span class="text-gold">Seit 11.&nbsp;11.&nbsp;1902</span><span class="dot"></span></div>
+      <div class="marquee-item"><span>Eigene Reifung</span><span class="dot"></span></div>
+    </div>
   </div>
 </section>
 
 <!-- ============================== AWARDS ============================== -->
-<section id="auszeichnungen" class="bg-ink text-paper relative overflow-hidden">
-  <div class="absolute inset-0 grain opacity-30"></div>
-  <div class="seal-spotlight"></div>
+<section id="auszeichnungen" class="section-deeper section-pad-lg overflow-hidden grain">
+  <div class="aura-amber"></div>
 
-  <div class="relative max-w-container mx-auto px-6 lg:px-10 py-24 lg:py-32">
+  <div class="relative max-w-container mx-auto px-6 lg:px-10">
 
-    <div class="section-label mb-12 reveal">
-      <span class="roman-num text-gold-l">II.</span>
-      <span class="label-text !text-gold-l">Auszeichnungen <span class="text-gold mx-1">·</span> Distinktionen</span>
-      <span class="accent-rule !bg-gold/30"></span>
+    <div class="section-label reveal">
+      <span class="label-num">01 / Auszeichnungen</span>
+      <span class="label-rule"></span>
     </div>
 
-    <!-- Editorial spread -->
-    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
-      <div class="lg:col-span-7 reveal">
-        <h2 class="display-xl text-[clamp(2.5rem,7vw,5.5rem)]">
-          Zu den <span class="display-italic text-gold-l">fünfhundert</span><br>
-          besten Metzgereien<br>
-          Deutschlands.
+    <!-- Mega editorial block -->
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 mb-24">
+      <div class="lg:col-span-8 reveal-blur">
+        <h2 class="h-section">
+          Zu den <span class="text-gradient-amber">fünfhundert besten</span><br>
+          Metzgereien Deutschlands.
         </h2>
       </div>
-      <div class="lg:col-span-5 flex flex-col justify-end reveal" style="--reveal-delay: 120ms;">
-        <p class="text-[1.1rem] leading-[1.65] text-paper/75 max-w-md mb-6">
-          Das Gourmet-Magazin <span class="italic text-gold-l">Der Feinschmecker</span> kürt jedes Jahr die besten Adressen der Republik. 2023 stehen wir auf dieser Liste.
+      <div class="lg:col-span-4 flex flex-col justify-end reveal" style="--reveal-delay: 150ms;">
+        <p class="lead mb-6">
+          Das Gourmet-Magazin <span class="text-gold font-medium">Der Feinschmecker</span> kürt jährlich die besten Adressen Deutschlands. 2023 stehen wir auf dieser Liste.
         </p>
-        <div class="rule-burgundy !bg-gold mb-6"></div>
-        <p class="font-mono text-[0.72rem] tracking-[0.18em] uppercase text-paper/55">
-          Magazin · Der Feinschmecker · Ausgabe 2023
-        </p>
+        <div class="font-mono text-[0.7rem] tracking-[0.2em] uppercase text-warm/55">
+          Magazin <span class="text-gold mx-1">·</span> Der Feinschmecker <span class="text-gold mx-1">·</span> Ausgabe 2023
+        </div>
       </div>
     </div>
 
-    <!-- Medal row — 4 gold medals -->
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 lg:gap-x-10 gap-y-14 lg:gap-y-20 pt-10 border-t border-paper/15">
+    <!-- 4 medals -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 lg:gap-x-10 gap-y-20 lg:gap-y-24">
 
-      <div class="reveal text-center" style="--reveal-delay: 0ms;">
-        <div class="medal mx-auto max-w-[180px]">
-          <div class="medal-circle">
+      <div class="reveal text-center">
+        <div class="medal mx-auto max-w-[200px]">
+          <div class="medal-disc">
             <div class="medal-inner">
               <div class="medal-text-top">Meisterstücke</div>
-              <div class="medal-gold">Gold</div>
+              <div class="medal-gold-word">Gold</div>
               <div class="medal-year">2023</div>
             </div>
           </div>
           <div class="medal-ribbon">Leberwurst</div>
         </div>
-        <div class="mt-10">
-          <div class="font-display text-xl tracking-tight">Delikatess-<br>Leberwurst</div>
-          <div class="mt-2 font-mono text-[0.62rem] tracking-[0.18em] uppercase text-paper/55">Hausrezept</div>
-        </div>
+        <h3 class="font-display font-bold text-xl lg:text-2xl mt-10 tracking-tight">Delikatess-<br>Leberwurst</h3>
+        <p class="mt-2 text-warm/55 text-sm">Hausrezept</p>
       </div>
 
       <div class="reveal text-center" style="--reveal-delay: 100ms;">
-        <div class="medal mx-auto max-w-[180px]">
-          <div class="medal-circle">
+        <div class="medal mx-auto max-w-[200px]">
+          <div class="medal-disc">
             <div class="medal-inner">
               <div class="medal-text-top">Meisterstücke</div>
-              <div class="medal-gold">Gold</div>
+              <div class="medal-gold-word">Gold</div>
               <div class="medal-year">2023</div>
             </div>
           </div>
-          <div class="medal-ribbon">Haussalami</div>
+          <div class="medal-ribbon">Salami</div>
         </div>
-        <div class="mt-10">
-          <div class="font-display text-xl tracking-tight">Haussalami</div>
-          <div class="mt-2 font-mono text-[0.62rem] tracking-[0.18em] uppercase text-paper/55">Eigene Reifung</div>
-        </div>
+        <h3 class="font-display font-bold text-xl lg:text-2xl mt-10 tracking-tight">Haussalami</h3>
+        <p class="mt-2 text-warm/55 text-sm">Eigene Reifung</p>
       </div>
 
       <div class="reveal text-center" style="--reveal-delay: 200ms;">
-        <div class="medal mx-auto max-w-[180px]">
-          <div class="medal-circle">
+        <div class="medal mx-auto max-w-[200px]">
+          <div class="medal-disc">
             <div class="medal-inner">
               <div class="medal-text-top">Meisterstücke</div>
-              <div class="medal-gold">Gold</div>
+              <div class="medal-gold-word">Gold</div>
               <div class="medal-year">2023</div>
             </div>
           </div>
           <div class="medal-ribbon">Schinken</div>
         </div>
-        <div class="mt-10">
-          <div class="font-display text-xl tracking-tight">Farmerschinken</div>
-          <div class="mt-2 font-mono text-[0.62rem] tracking-[0.18em] uppercase text-paper/55">Holz-geräuchert</div>
-        </div>
+        <h3 class="font-display font-bold text-xl lg:text-2xl mt-10 tracking-tight">Farmerschinken</h3>
+        <p class="mt-2 text-warm/55 text-sm">Holz-geräuchert</p>
       </div>
 
       <div class="reveal text-center" style="--reveal-delay: 300ms;">
-        <div class="medal mx-auto max-w-[180px]">
-          <div class="medal-circle">
+        <div class="medal mx-auto max-w-[200px]">
+          <div class="medal-disc">
             <div class="medal-inner">
               <div class="medal-text-top">Meisterstücke</div>
-              <div class="medal-gold">Gold</div>
+              <div class="medal-gold-word">Gold</div>
               <div class="medal-year">2023</div>
             </div>
           </div>
           <div class="medal-ribbon">Lyoner</div>
         </div>
-        <div class="mt-10">
-          <div class="font-display text-xl tracking-tight">Lyoner im Ring</div>
-          <div class="mt-2 font-mono text-[0.62rem] tracking-[0.18em] uppercase text-paper/55">Brühwurst-Klassiker</div>
-        </div>
+        <h3 class="font-display font-bold text-xl lg:text-2xl mt-10 tracking-tight">Lyoner im Ring</h3>
+        <p class="mt-2 text-warm/55 text-sm">Brühwurst-Klassiker</p>
       </div>
 
     </div>
 
     <!-- Additional honor -->
-    <div class="mt-24 pt-12 border-t border-paper/15 grid lg:grid-cols-12 gap-8 reveal">
-      <div class="lg:col-span-6">
-        <span class="font-mono text-[0.7rem] tracking-[0.22em] uppercase text-gold-l">+ Weitere Auszeichnung</span>
-        <h3 class="mt-4 font-display text-3xl lg:text-4xl leading-[1.15]">
-          Mehrfach prämiert auch von der<br>
-          <span class="italic text-gold-l">Saarländischen Fleischerinnung 2022.</span>
+    <div class="mt-24 lg:mt-32 pt-12 border-t border-warm/10 grid lg:grid-cols-12 gap-10 reveal">
+      <div class="lg:col-span-7">
+        <span class="eyebrow">+ Weitere Auszeichnung</span>
+        <h3 class="h-card mt-4">
+          Mehrfach prämiert von der <span class="text-gradient-amber">Saarländischen Fleischerinnung 2022.</span>
         </h3>
       </div>
-      <div class="lg:col-span-6 flex items-end">
-        <p class="text-paper/70 leading-[1.65] max-w-lg">
+      <div class="lg:col-span-5 flex items-end">
+        <p class="lead">
           Auszeichnungen sind für uns nicht das Ziel — sondern das Echo dessen, was wir im Alltag tun. Wer 122 Jahre lang in dritter Reihe denkt, wird irgendwann bemerkt.
         </p>
       </div>
@@ -324,213 +286,259 @@
   </div>
 </section>
 
-<!-- ============================== SORTIMENT ============================== -->
-<section id="sortiment" class="relative">
-  <div class="max-w-container mx-auto px-6 lg:px-10 py-24 lg:py-32">
+<!-- ============================== SPEZIALITÄTEN — feature stack ============================== -->
+<section id="sortiment" class="section-dark section-pad-lg overflow-hidden">
+  <div class="max-w-container mx-auto px-6 lg:px-10 mb-20 lg:mb-32">
 
-    <div class="section-label mb-12 reveal">
-      <span class="roman-num">III.</span>
-      <span class="label-text">Aus der Theke</span>
-      <span class="accent-rule"></span>
+    <div class="section-label reveal">
+      <span class="label-num">02 / Sortiment</span>
+      <span class="label-rule"></span>
     </div>
 
-    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
-      <div class="lg:col-span-7 reveal">
-        <h2 class="display-xl text-[clamp(2.2rem,6vw,4.8rem)]">
-          Wurst, die <span class="display-italic text-burgundy">man schmeckt.</span><br>
-          Fleisch, das man <span class="display-italic">kennt.</span>
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <div class="lg:col-span-7 reveal-blur">
+        <h2 class="h-section">
+          Wurst, die man <span class="text-gradient-ember">schmeckt.</span><br>
+          Fleisch, das man <span class="text-gradient-amber">kennt.</span>
         </h2>
       </div>
-      <div class="lg:col-span-5 flex items-end reveal" style="--reveal-delay: 100ms;">
-        <p class="text-[1.05rem] leading-[1.65] text-mute max-w-md">
-          Jede Wurst entsteht im Haus. Reifung, Würzung, Räucherung — alles unter unserem Dach in der Hauptstraße. Hier sind die vier Stücke, für die uns die Fachwelt 2023 mit Gold ausgezeichnet hat.
+      <div class="lg:col-span-5 flex items-end reveal" style="--reveal-delay: 150ms;">
+        <p class="lead">
+          Jede Wurst entsteht im Haus. Reifung, Würzung, Räucherung — alles unter unserem Dach. Hier sind die vier Stücke, für die uns die Fachwelt 2023 mit Gold ausgezeichnet hat.
         </p>
       </div>
     </div>
-
-    <!-- 4 product cards (one per gold medal) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-
-      <a href="tel:+4968345113" class="product-card reveal block">
-        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1606851091851-e8c8c0fca5ba?auto=format&fit=crop&w=700&q=80');">
-          <div class="product-gold-tag">Gold 2023</div>
-        </div>
-        <div class="p-5 lg:p-6">
-          <div class="font-mono text-[0.62rem] tracking-[0.2em] uppercase text-mute">Hausrezept</div>
-          <div class="font-display text-2xl tracking-tight mt-1">Delikatess-Leberwurst</div>
-          <p class="text-[0.92rem] text-mute mt-3 leading-[1.55]">Cremig, fein gewürzt — exakt das Profil, mit dem unser Urgroßvater begonnen hat.</p>
-        </div>
-      </a>
-
-      <a href="tel:+4968345113" class="product-card reveal block" style="--reveal-delay: 80ms;">
-        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1542219550-37153d387c27?auto=format&fit=crop&w=700&q=80');">
-          <div class="product-gold-tag">Gold 2023</div>
-        </div>
-        <div class="p-5 lg:p-6">
-          <div class="font-mono text-[0.62rem] tracking-[0.2em] uppercase text-mute">Eigene Reifung</div>
-          <div class="font-display text-2xl tracking-tight mt-1">Haussalami</div>
-          <p class="text-[0.92rem] text-mute mt-3 leading-[1.55]">Über Wochen in der eigenen Reifekammer gewachsen. Würzig, dicht, ausbalanciert.</p>
-        </div>
-      </a>
-
-      <a href="tel:+4968345113" class="product-card reveal block" style="--reveal-delay: 160ms;">
-        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1605908502724-9093a79a1b39?auto=format&fit=crop&w=700&q=80');">
-          <div class="product-gold-tag">Gold 2023</div>
-        </div>
-        <div class="p-5 lg:p-6">
-          <div class="font-mono text-[0.62rem] tracking-[0.2em] uppercase text-mute">Holz-geräuchert</div>
-          <div class="font-display text-2xl tracking-tight mt-1">Farmerschinken</div>
-          <p class="text-[0.92rem] text-mute mt-3 leading-[1.55]">Über Buchenholz langsam geräuchert. Charakterstarker Schinken aus dem Saarland.</p>
-        </div>
-      </a>
-
-      <a href="tel:+4968345113" class="product-card reveal block" style="--reveal-delay: 240ms;">
-        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=700&q=80');">
-          <div class="product-gold-tag">Gold 2023</div>
-        </div>
-        <div class="p-5 lg:p-6">
-          <div class="font-mono text-[0.62rem] tracking-[0.2em] uppercase text-mute">Brühwurst-Klassiker</div>
-          <div class="font-display text-2xl tracking-tight mt-1">Lyoner im Ring</div>
-          <p class="text-[0.92rem] text-mute mt-3 leading-[1.55]">Der Klassiker im Ring — saftig, mild, mit klarem Eigenprofil. Hausrezept seit Generationen.</p>
-        </div>
-      </a>
-
-    </div>
-
-    <!-- Additional assortment -->
-    <div class="mt-20 pt-10 border-t border-rule grid lg:grid-cols-12 gap-8 reveal">
-      <div class="lg:col-span-5">
-        <span class="font-mono text-[0.7rem] tracking-[0.22em] uppercase text-burgundy">+ Aus der Theke</span>
-        <h3 class="mt-4 font-display text-3xl lg:text-4xl leading-[1.15]">
-          Über 80 weitere Wurst- und <span class="italic">Fleischspezialitäten</span>.
-        </h3>
-      </div>
-      <div class="lg:col-span-7 flex items-center">
-        <p class="text-mute leading-[1.7]">
-          Brüh- und Kochwurst, Schinken, frisches Rind und Schwein, Putenbraten, Fleischkäse, Rindfleischsuppe, Wurstgläser für die Vorratskammer, regionale Spezialitäten wie Schwenker, Käsebeißer, Rohesser. Telefonisch oder bei uns vor Ort.
-        </p>
-      </div>
-    </div>
-
   </div>
-</section>
 
-<!-- ============================== MITTAGSTISCH ============================== -->
-<section id="mittagstisch" class="bg-cream relative grain">
-  <div class="relative max-w-container mx-auto px-6 lg:px-10 py-24 lg:py-32">
+  <!-- 4 stacked feature blocks, alternating -->
 
-    <div class="section-label mb-12 reveal">
-      <span class="roman-num">IV.</span>
-      <span class="label-text">Mittagstisch</span>
-      <span class="accent-rule"></span>
-    </div>
-
-    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
-
-      <div class="lg:col-span-6 reveal">
-        <h2 class="display-xl text-[clamp(2.2rem,6vw,4.8rem)]">
-          Frisch gekocht.<br>
-          <span class="display-italic text-burgundy">Jeden Tag neu.</span>
-        </h2>
-        <p class="mt-8 text-[1.05rem] leading-[1.7] text-mute max-w-lg dropcap">
-          Hausmannskost aus eigener Küche. Klassische Gerichte, ehrlich gekocht — Schweinebraten, Rouladen, Frikadellen, Putenschwenker, dazu wechselnde Tagesgerichte. Was es täglich gibt, erfahren Sie telefonisch oder im Laden auf der Tafel.
+  <!-- Feature 1: Leberwurst -->
+  <div class="border-t border-warm/8 feature-row">
+    <div class="max-w-container mx-auto px-6 lg:px-10 py-24 lg:py-40 grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+      <div class="lg:col-span-5 lg:sticky lg:top-32 reveal-blur" data-feature-image>
+        <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-bg-charcoal will-change-transform" style="background-image: url('https://images.unsplash.com/photo-1606851091851-e8c8c0fca5ba?auto=format&fit=crop&w=900&q=85'); background-size: cover; background-position: center;"></div>
+      </div>
+      <div class="lg:col-span-7 reveal lg:py-24" style="--reveal-delay: 150ms;">
+        <div class="gold-pill mb-6">★ Gold 2023</div>
+        <h3 class="h-section">Delikatess-<br><span class="text-gradient-amber">Leberwurst.</span></h3>
+        <p class="lead mt-8 max-w-xl">
+          Cremig, fein abgeschmeckt, frei von Beschönigungen — exakt das Geschmacksprofil, mit dem unser Urgroßvater 1902 begonnen hat. Das Rezept hat sich nicht geändert.
         </p>
-
         <div class="mt-10 flex flex-wrap items-center gap-4">
           <a href="tel:+4968345113" class="btn btn-primary">
-            Tagesgericht erfragen
-            <span class="btn-arrow">→</span>
+            Vorbestellen
+            <span class="arrow">→</span>
           </a>
-          <a href="#lieferservice" class="link-underline text-ink">
-            Lieferung bestellen →
+          <div class="font-mono text-[0.7rem] tracking-[0.2em] uppercase text-warm/55">Hausrezept · 1902</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature 2: Salami (reversed) -->
+  <div class="border-t border-warm/8 bg-bg-deeper feature-row">
+    <div class="max-w-container mx-auto px-6 lg:px-10 py-24 lg:py-40 grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+      <div class="lg:col-span-7 lg:order-1 reveal lg:py-24" style="--reveal-delay: 150ms;">
+        <div class="gold-pill mb-6">★ Gold 2023</div>
+        <h3 class="h-section"><span class="text-gradient-ember">Haus</span>salami.</h3>
+        <p class="lead mt-8 max-w-xl">
+          Über Wochen in der eigenen Reifekammer gewachsen. Würzig, dicht, ausbalanciert — eine Salami mit Charakter und langer Halbzeit auf dem Brettchen.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <a href="tel:+4968345113" class="btn btn-primary">
+            Vorbestellen
+            <span class="arrow">→</span>
           </a>
+          <div class="font-mono text-[0.7rem] tracking-[0.2em] uppercase text-warm/55">Eigene Reifekammer</div>
+        </div>
+      </div>
+      <div class="lg:col-span-5 lg:order-2 lg:sticky lg:top-32 reveal-blur" data-feature-image>
+        <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-bg-charcoal will-change-transform" style="background-image: url('https://images.unsplash.com/photo-1542219550-37153d387c27?auto=format&fit=crop&w=900&q=85'); background-size: cover; background-position: center;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature 3: Farmerschinken -->
+  <div class="border-t border-warm/8 feature-row">
+    <div class="max-w-container mx-auto px-6 lg:px-10 py-24 lg:py-40 grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+      <div class="lg:col-span-5 lg:sticky lg:top-32 reveal-blur" data-feature-image>
+        <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-bg-charcoal will-change-transform" style="background-image: url('https://images.unsplash.com/photo-1605908502724-9093a79a1b39?auto=format&fit=crop&w=900&q=85'); background-size: cover; background-position: center;"></div>
+      </div>
+      <div class="lg:col-span-7 reveal lg:py-24" style="--reveal-delay: 150ms;">
+        <div class="gold-pill mb-6">★ Gold 2023</div>
+        <h3 class="h-section"><span class="text-gradient-amber">Farmer</span>schinken.</h3>
+        <p class="lead mt-8 max-w-xl">
+          Über Buchenholz langsam geräuchert. Saarländischer Charakterschinken — leicht süßlich, mit klarem Raucharoma, dichter Faser. Aus der eigenen Räucherkammer.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <a href="tel:+4968345113" class="btn btn-primary">
+            Vorbestellen
+            <span class="arrow">→</span>
+          </a>
+          <div class="font-mono text-[0.7rem] tracking-[0.2em] uppercase text-warm/55">Holz-geräuchert</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature 4: Lyoner (reversed) -->
+  <div class="border-t border-b border-warm/8 bg-bg-deeper feature-row">
+    <div class="max-w-container mx-auto px-6 lg:px-10 py-24 lg:py-40 grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+      <div class="lg:col-span-7 lg:order-1 reveal lg:py-24" style="--reveal-delay: 150ms;">
+        <div class="gold-pill mb-6">★ Gold 2023</div>
+        <h3 class="h-section">Lyoner <span class="text-gradient-ember">im Ring.</span></h3>
+        <p class="lead mt-8 max-w-xl">
+          Der saarländische Klassiker im Ring — saftig, mild, mit klarem Eigenprofil. Hausrezept seit Generationen, jeden Tag frisch aus der eigenen Wurstküche.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <a href="tel:+4968345113" class="btn btn-primary">
+            Vorbestellen
+            <span class="arrow">→</span>
+          </a>
+          <div class="font-mono text-[0.7rem] tracking-[0.2em] uppercase text-warm/55">Brühwurst-Klassiker</div>
+        </div>
+      </div>
+      <div class="lg:col-span-5 lg:order-2 lg:sticky lg:top-32 reveal-blur" data-feature-image>
+        <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-bg-charcoal will-change-transform" style="background-image: url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=900&q=85'); background-size: cover; background-position: center;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- More from the counter -->
+  <div class="max-w-container mx-auto px-6 lg:px-10 mt-24 lg:mt-32">
+    <div class="reveal grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7">
+        <span class="eyebrow">+ Aus der Theke</span>
+        <h3 class="h-card mt-4">Über 80 weitere Wurst- und <span class="text-gradient-amber">Fleischspezialitäten.</span></h3>
+      </div>
+      <div class="lg:col-span-5">
+        <p class="lead">
+          Brüh- und Kochwurst, Schinken, frisches Rind und Schwein, Putenbraten, Fleischkäse, Wurstgläser, regionale Spezialitäten wie Schwenker und Käsebeißer. Telefonisch oder vor Ort.
+        </p>
+        <a href="tel:+4968345113" class="inline-flex items-center gap-2 mt-6 text-gold font-medium hover:gap-3 transition-all">
+          Persönliche Beratung anfragen <span>→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================== TRADITION — 122 ============================== -->
+<section id="tradition" class="section-deeper section-pad-lg relative overflow-hidden grain">
+  <div class="aura-ember"></div>
+
+  <div class="relative max-w-container mx-auto px-6 lg:px-10">
+
+    <div class="section-label reveal">
+      <span class="label-num">03 / Tradition</span>
+      <span class="label-rule"></span>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
+
+      <!-- Sticky 122 + intro -->
+      <div class="lg:col-span-5">
+        <div class="lg:sticky lg:top-32" data-mega-stat>
+          <div class="reveal-blur will-change-transform">
+            <div class="stat-big text-gradient-ember">122</div>
+            <div class="mt-4 font-mono text-[0.78rem] tracking-[0.24em] uppercase text-warm/55">Jahre <span class="text-gold mx-1">·</span> Vier Generationen <span class="text-gold mx-1">·</span> Ein Standort</div>
+          </div>
+          <div class="reveal mt-12" style="--reveal-delay: 150ms;">
+            <h2 class="h-card">
+              Am <span class="text-gold">11. November 1902</span> öffnete die Metzgerei zum ersten Mal ihre Tür.
+            </h2>
+            <p class="lead mt-6">
+              Vier Familien­generationen später stehen wir noch immer dort — am selben Ort, mit denselben Prinzipien.
+            </p>
+          </div>
         </div>
       </div>
 
-      <div class="lg:col-span-6 reveal" style="--reveal-delay: 100ms;">
-        <div class="bg-paper border border-rule p-8 lg:p-10">
+      <!-- Timeline + Quote (scrolls past sticky 122) -->
+      <div class="lg:col-span-7 space-y-14 lg:py-12">
 
-          <div class="font-mono text-[0.7rem] tracking-[0.22em] uppercase text-burgundy mb-6">Gut zu wissen</div>
-
-          <div class="space-y-6">
-            <div class="flex items-start gap-4 pb-6 border-b border-rule">
-              <div class="font-display italic text-3xl text-burgundy leading-none w-12 shrink-0">i.</div>
-              <div>
-                <div class="font-display text-lg mb-1">Solange der Vorrat reicht</div>
-                <p class="text-mute text-[0.95rem] leading-[1.55]">Wir bitten um rechtzeitige Vorbestellung — telefonisch oder im Laden.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 pb-6 border-b border-rule">
-              <div class="font-display italic text-3xl text-burgundy leading-none w-12 shrink-0">ii.</div>
-              <div>
-                <div class="font-display text-lg mb-1">Bei Lieferung</div>
-                <p class="text-mute text-[0.95rem] leading-[1.55]">Preis wie angegeben, zzgl. <span class="text-ink font-medium">1,00&nbsp;€ Anfahrt</span>.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4">
-              <div class="font-display italic text-3xl text-burgundy leading-none w-12 shrink-0">iii.</div>
-              <div>
-                <div class="font-display text-lg mb-1">Senioren-Portion</div>
-                <p class="text-mute text-[0.95rem] leading-[1.55]">Kleinere Portion mit <span class="text-ink font-medium">0,50&nbsp;€ Rabatt</span> pro Bestellung.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-8 pt-6 border-t border-rule">
-            <div class="font-mono text-[0.7rem] tracking-[0.22em] uppercase text-mute mb-3">Wir liefern</div>
-            <div class="font-display text-xl leading-[1.4]">
-              Schwalbach <span class="text-gold">·</span> Ensdorf <span class="text-gold">·</span> Bous <span class="text-gold">·</span> Überherrn <span class="text-gold">·</span> Wadgassen
-            </div>
-          </div>
-
+        <div class="reveal tline">
+          <div class="tline-dot" style="top: 8px;"></div>
+          <div class="font-display text-3xl font-bold text-gold">1902</div>
+          <div class="font-mono text-[0.7rem] tracking-[0.2em] uppercase text-warm/55 mt-2 mb-3">Gründung</div>
+          <p class="text-warm/75 leading-relaxed">Eröffnung in der Hauptstraße 24 — handwerkliche Metzgerei mit eigener Schlachtung, Verkauf direkt aus der Werkstatt.</p>
         </div>
+
+        <div class="reveal tline" style="--reveal-delay: 100ms;">
+          <div class="tline-dot" style="top: 8px;"></div>
+          <div class="font-display text-3xl font-bold text-gold">2. Generation</div>
+          <div class="font-mono text-[0.7rem] tracking-[0.2em] uppercase text-warm/55 mt-2 mb-3">Übergabe</div>
+          <p class="text-warm/75 leading-relaxed">Übernahme durch den Sohn des Gründers — Erweiterung des Wurstsortiments, Etablierung der heutigen Hausrezepturen.</p>
+        </div>
+
+        <div class="reveal tline" style="--reveal-delay: 200ms;">
+          <div class="tline-dot" style="top: 8px;"></div>
+          <div class="font-display text-3xl font-bold text-gold">3. Generation</div>
+          <div class="font-mono text-[0.7rem] tracking-[0.2em] uppercase text-warm/55 mt-2 mb-3">Mittagstisch</div>
+          <p class="text-warm/75 leading-relaxed">Aufbau des Mittagstischs und Lieferservices — Metzgerei wird zum Treffpunkt in Schwalbach.</p>
+        </div>
+
+        <div class="reveal tline" style="--reveal-delay: 300ms;">
+          <div class="tline-dot" style="top: 8px; background: var(--ember); box-shadow: 0 0 0 1px var(--ember), 0 0 28px rgba(212,56,56,0.7);"></div>
+          <div class="font-display text-3xl font-bold text-warm">Heute</div>
+          <div class="font-mono text-[0.7rem] tracking-[0.2em] uppercase text-ember mt-2 mb-3">4. Generation</div>
+          <p class="text-warm/75 leading-relaxed">Vier Gold-Auszeichnungen, Aufnahme in die Feinschmecker Top 500 Deutschlands — geführt als Jochem GmbH, Mitglied der Saarländischen Fleischerinnung.</p>
+        </div>
+
+        <!-- Family quote -->
+        <div class="mt-20 pt-12 border-t border-warm/10 reveal">
+          <span class="font-display italic text-6xl text-gold leading-none">"</span>
+          <p class="h-card mt-4">
+            Was sich in vier Generationen bewährt hat, geben wir nicht her — nicht das <span class="text-gradient-amber">Rezept,</span> nicht den <span class="text-gradient-amber">Anspruch,</span> nicht den Ort.
+          </p>
+          <p class="mt-6 font-mono text-[0.72rem] tracking-[0.22em] uppercase text-warm/55">— Familie Jochem</p>
+        </div>
+
       </div>
 
     </div>
+
   </div>
 </section>
 
-<!-- ============================== 24h AUTOMAT ============================== -->
-<section id="automat" class="bg-ink text-paper relative overflow-hidden">
-  <div class="absolute inset-0 grain opacity-30"></div>
+<!-- ============================== 24/7 AUTOMAT ============================== -->
+<section id="automat" class="section-dark section-pad-lg relative overflow-hidden">
+  <div class="aura-amber"></div>
 
-  <div class="relative max-w-container mx-auto px-6 lg:px-10 py-24 lg:py-32">
+  <div class="relative max-w-container mx-auto px-6 lg:px-10">
 
-    <div class="section-label mb-12 reveal">
-      <span class="roman-num !text-gold-l">V.</span>
-      <span class="label-text !text-gold-l">24 / 7 Automat</span>
-      <span class="accent-rule !bg-paper/15"></span>
+    <div class="section-label reveal">
+      <span class="label-num">04 / Automat</span>
+      <span class="label-rule"></span>
     </div>
 
-    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 mb-16">
-      <div class="lg:col-span-7 reveal">
-        <h2 class="display-xl text-[clamp(2.5rem,7vw,5.5rem)]">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-end mb-20">
+      <div class="lg:col-span-8 reveal-blur">
+        <div class="font-mono text-[0.74rem] tracking-[0.24em] uppercase text-gold mb-6">24 / 7</div>
+        <h2 class="h-section">
           Auch wenn wir<br>
-          <span class="display-italic text-gold-l">geschlossen</span> haben.
+          <span class="text-gradient-amber">geschlossen</span> haben.
         </h2>
-        <p class="mt-8 text-[1.1rem] leading-[1.7] text-paper/75 max-w-xl">
-          Unser Automat vor dem Laden ist <span class="text-gold-l font-medium">rund um die Uhr</span> geöffnet — stets frisch bestückt mit den beliebtesten Stücken aus unserer Theke. Auch nach Ladenschluss, am Sonntag, am Feiertag.
-        </p>
       </div>
-      <div class="lg:col-span-5 flex flex-col justify-end reveal" style="--reveal-delay: 120ms;">
-        <div class="bg-paper/[0.04] border border-paper/15 p-6">
-          <div class="font-mono text-[0.62rem] tracking-[0.2em] uppercase text-gold-l mb-3">Standort Automat</div>
-          <div class="font-display text-2xl mb-1">Hauptstraße 24</div>
-          <div class="text-paper/60 text-sm">66773 Schwalbach <span class="text-paper/30">·</span> Vor der Tür</div>
-          <div class="mt-5 pt-5 border-t border-paper/15 flex items-center gap-3">
-            <span class="live-dot"></span>
-            <span class="font-mono text-[0.7rem] tracking-[0.18em] uppercase text-paper/85">Aktuell geöffnet · 24 / 7</span>
-          </div>
+      <div class="lg:col-span-4 reveal" style="--reveal-delay: 150ms;">
+        <p class="lead">
+          Unser Automat vor dem Laden ist <span class="text-gold font-medium">rund um die Uhr</span> bestückt — auch sonntags, am Feiertag, nach Ladenschluss.
+        </p>
+        <div class="mt-6 flex items-center gap-3 text-warm/65">
+          <span class="live-dot"></span>
+          <span class="font-mono text-[0.72rem] tracking-[0.18em] uppercase">Aktuell aktiv · 24 / 7</span>
         </div>
       </div>
     </div>
 
     <!-- Item chips -->
     <div class="reveal">
-      <div class="font-mono text-[0.7rem] tracking-[0.22em] uppercase text-paper/60 mb-5">Stets gut gefüllt mit</div>
-      <div class="flex flex-wrap gap-2">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="font-mono text-[0.72rem] tracking-[0.22em] uppercase text-warm/55">Stets gut gefüllt mit</div>
+        <div class="flex-1 h-px bg-warm/10"></div>
+      </div>
+      <div class="flex flex-wrap gap-3">
         <span class="chip">4er Wiener</span>
         <span class="chip">4er Rohesser</span>
         <span class="chip">2er Frikadelle</span>
@@ -545,232 +553,168 @@
         <span class="chip">Putenbraten</span>
         <span class="chip">Currywurst</span>
         <span class="chip">Salami</span>
-        <span class="chip">Wurstgläser (2&nbsp;Sorten)</span>
+        <span class="chip">Wurstgläser · 2 Sorten</span>
         <span class="chip">Rindfleischsuppe</span>
         <span class="chip">Eier</span>
-        <span class="chip">Getränke (2&nbsp;Sorten)</span>
+        <span class="chip">Getränke · 2 Sorten</span>
         <span class="chip">Red Bull</span>
         <span class="chip">Monster</span>
         <span class="chip">Mars · Twix · Snickers</span>
       </div>
     </div>
 
+    <!-- Automat location card -->
+    <div class="mt-16 reveal">
+      <div class="card-dark p-8 lg:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <div class="font-mono text-[0.68rem] tracking-[0.22em] uppercase text-gold mb-2">Standort Automat</div>
+          <div class="font-display text-3xl font-bold tracking-tight">Hauptstraße 24, Schwalbach</div>
+          <div class="text-warm/55 mt-2">Direkt vor dem Laden · zugänglich rund um die Uhr</div>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Hauptstra%C3%9Fe+24+66773+Schwalbach" target="_blank" rel="noopener" class="btn btn-ghost shrink-0">
+          Auf der Karte
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ============================== LIEFERSERVICE ============================== -->
-<section id="lieferservice" class="relative">
-  <div class="max-w-container mx-auto px-6 lg:px-10 py-24 lg:py-32">
+<!-- ============================== LIEFERUNG ============================== -->
+<section id="lieferung" class="section-light section-pad-lg">
+  <div class="max-w-container mx-auto px-6 lg:px-10">
 
-    <div class="section-label mb-12 reveal">
-      <span class="roman-num">VI.</span>
-      <span class="label-text">Lieferservice</span>
-      <span class="accent-rule"></span>
+    <div class="section-label reveal">
+      <span class="label-num">05 / Lieferung</span>
+      <span class="label-rule"></span>
     </div>
 
-    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
-      <div class="lg:col-span-7 reveal">
-        <h2 class="display-xl text-[clamp(2.2rem,6vw,4.8rem)]">
-          Wir bringen <span class="display-italic text-burgundy">die Theke</span><br>
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end mb-20">
+      <div class="lg:col-span-8 reveal-blur">
+        <h2 class="h-section">
+          Wir bringen <span class="text-gradient-ember">die Theke</span><br>
           zu Ihnen nach Hause.
         </h2>
       </div>
-      <div class="lg:col-span-5 flex items-end reveal" style="--reveal-delay: 100ms;">
-        <p class="text-[1.05rem] leading-[1.7] text-mute max-w-md">
-          Zwei Lieferwege: warmes Mittagessen direkt ans Mittagstisch-Fenster — oder Wurst, Fleisch und Grundsortiment bequem nach Hause. Auf Bestellung, in den umliegenden Gemeinden.
+      <div class="lg:col-span-4 reveal" style="--reveal-delay: 150ms;">
+        <p class="text-lg leading-relaxed text-bg-dark/70 max-w-md">
+          Zwei Wege: warmes Mittagessen direkt an die Tür — oder Wurst, Fleisch und Grundsortiment bequem nach Hause. Auf Bestellung, in den umliegenden Gemeinden.
         </p>
       </div>
     </div>
 
+    <!-- Two cards -->
     <div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
 
-      <!-- Card 1: Mittagstisch delivery -->
-      <div class="bg-cream p-8 lg:p-10 reveal">
-        <div class="flex items-baseline justify-between mb-6 pb-6 border-b border-rule">
-          <span class="font-mono text-[0.7rem] tracking-[0.22em] uppercase text-burgundy">Service 01</span>
-          <span class="font-mono text-[0.7rem] tracking-[0.18em] uppercase text-mute">Mo–Sa</span>
+      <div class="card-light p-8 lg:p-12 reveal">
+        <div class="flex items-center justify-between mb-8 pb-8 border-b border-bg-dark/10">
+          <span class="gold-pill !bg-bg-dark !text-warm">Service 01</span>
+          <span class="font-mono text-[0.7rem] tracking-[0.18em] uppercase text-bg-dark/55">Mo – Sa</span>
         </div>
-        <h3 class="font-display text-3xl lg:text-4xl tracking-tight mb-4">
-          Mittagstisch-Lieferung
+        <h3 class="font-display text-3xl lg:text-4xl font-bold tracking-tight text-bg-dark">
+          Mittagstisch-<br>Lieferung.
         </h3>
-        <p class="text-mute leading-[1.65] mb-6">Auslieferung des frisch gekochten Mittagstischs in den Lieferzonen — täglich Montag bis Samstag.</p>
-
-        <div class="space-y-3 mb-8">
-          <div class="flex justify-between text-[0.95rem] pb-3 border-b border-rule/60">
-            <span class="text-mute">Lieferzeit</span>
-            <span class="font-mono tabular">11:30 – 13:00 Uhr</span>
-          </div>
-          <div class="flex justify-between text-[0.95rem] pb-3 border-b border-rule/60">
-            <span class="text-mute">Anfahrt</span>
-            <span class="font-mono tabular">+ 1,00 €</span>
-          </div>
-          <div class="flex justify-between text-[0.95rem]">
-            <span class="text-mute">Senioren-Portion</span>
-            <span class="font-mono tabular">− 0,50 €</span>
-          </div>
-        </div>
-
-        <a href="tel:+4968345113" class="btn btn-primary w-full justify-center">
-          Bestellen <span class="font-mono normal-case tracking-normal">· 0 68 34 / 5 11 13</span>
-        </a>
-      </div>
-
-      <!-- Card 2: Lebensmittelservice -->
-      <div class="bg-burgundy text-paper p-8 lg:p-10 reveal" style="--reveal-delay: 100ms;">
-        <div class="flex items-baseline justify-between mb-6 pb-6 border-b border-paper/20">
-          <span class="font-mono text-[0.7rem] tracking-[0.22em] uppercase text-gold-l">Service 02</span>
-          <span class="font-mono text-[0.7rem] tracking-[0.18em] uppercase text-paper/55">Nach Vereinbarung</span>
-        </div>
-        <h3 class="font-display text-3xl lg:text-4xl tracking-tight mb-4">
-          Lebensmittelservice
-        </h3>
-        <p class="text-paper/75 leading-[1.65] mb-6">Wurst- und Fleischwaren plus Grundsortiment — Eier, Butter, Käse, Milch, Nudeln — direkt nach Hause. Innerhalb Schwalbachs.</p>
-
-        <div class="space-y-3 mb-8">
-          <div class="flex justify-between text-[0.95rem] pb-3 border-b border-paper/15">
-            <span class="text-paper/55">Lieferzeit</span>
-            <span class="font-mono tabular">11:30 – 13:30 Uhr</span>
-          </div>
-          <div class="flex justify-between text-[0.95rem] pb-3 border-b border-paper/15">
-            <span class="text-paper/55">Mindestbestellung</span>
-            <span class="font-mono tabular">10,00 €</span>
-          </div>
-          <div class="flex justify-between text-[0.95rem]">
-            <span class="text-paper/55">Anfahrt</span>
-            <span class="font-mono tabular">+ 1,00 €</span>
-          </div>
-        </div>
-
-        <a href="tel:+4968345113" class="btn btn-gold w-full justify-center">
-          Bestellen <span class="font-mono normal-case tracking-normal">· 0 68 34 / 5 11 13</span>
-        </a>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ============================== TRADITION ============================== -->
-<section id="tradition" class="bg-cream relative grain">
-  <div class="relative max-w-container mx-auto px-6 lg:px-10 py-24 lg:py-32">
-
-    <div class="section-label mb-12 reveal">
-      <span class="roman-num">VII.</span>
-      <span class="label-text">Tradition</span>
-      <span class="accent-rule"></span>
-    </div>
-
-    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
-
-      <div class="lg:col-span-5 reveal">
-        <h2 class="display-xl text-[clamp(2.2rem,6vw,4.8rem)]">
-          Hundert<span class="display-italic text-burgundy">zwei</span><br>
-          Zwanzig Jahre.<br>
-          <span class="display-italic">Eine Familie.</span>
-        </h2>
-
-        <p class="mt-10 text-[1.05rem] leading-[1.7] text-mute max-w-md dropcap">
-          Am 11. November 1902 öffnete die Metzgerei in der Hauptstraße zum ersten Mal ihre Tür. Vier Generationen später stehen wir noch immer dort — am selben Ort, mit denselben Prinzipien.
+        <p class="text-bg-dark/65 leading-relaxed mt-5 mb-8">
+          Frisch gekochter Mittagstisch direkt zu Ihnen — Hausmannskost, täglich neu, in den Lieferzonen Schwalbach, Ensdorf, Bous, Überherrn und Wadgassen.
         </p>
 
-        <div class="mt-10 pt-8 border-t border-rule grid grid-cols-3 gap-6">
-          <div>
-            <div class="font-display text-4xl tabular leading-none text-burgundy">122</div>
-            <div class="mt-2 font-mono text-[0.6rem] tracking-[0.2em] uppercase text-mute">Jahre</div>
+        <div class="space-y-3 mb-10">
+          <div class="flex justify-between text-sm pb-3 border-b border-bg-dark/10">
+            <span class="text-bg-dark/55">Lieferzeit</span>
+            <span class="font-mono tabular font-medium">11:30 – 13:00 Uhr</span>
           </div>
-          <div>
-            <div class="font-display text-4xl tabular leading-none">IV</div>
-            <div class="mt-2 font-mono text-[0.6rem] tracking-[0.2em] uppercase text-mute">Generationen</div>
+          <div class="flex justify-between text-sm pb-3 border-b border-bg-dark/10">
+            <span class="text-bg-dark/55">Anfahrt</span>
+            <span class="font-mono tabular font-medium">+ 1,00 €</span>
           </div>
-          <div>
-            <div class="font-display text-4xl tabular leading-none">1</div>
-            <div class="mt-2 font-mono text-[0.6rem] tracking-[0.2em] uppercase text-mute">Standort</div>
+          <div class="flex justify-between text-sm">
+            <span class="text-bg-dark/55">Senioren-Portion</span>
+            <span class="font-mono tabular font-medium">− 0,50 €</span>
           </div>
         </div>
+
+        <a href="tel:+4968345113" class="btn btn-on-light w-full justify-center">
+          Bestellen <span class="font-mono text-[0.8em] tracking-normal opacity-80">· 0 68 34 / 5 11 13</span>
+        </a>
       </div>
 
-      <!-- Timeline -->
-      <div class="lg:col-span-7 reveal" style="--reveal-delay: 120ms;">
-        <div class="relative pl-8">
-          <div class="timeline-line"></div>
-
-          <div class="flex gap-6 mb-10">
-            <div class="timeline-dot"></div>
-            <div class="flex-1">
-              <div class="flex items-baseline gap-3">
-                <span class="font-display text-3xl text-burgundy italic">1902</span>
-                <span class="font-mono text-[0.65rem] tracking-[0.22em] uppercase text-mute">Gründung</span>
-              </div>
-              <p class="mt-2 text-mute leading-[1.65] max-w-lg">Eröffnung in der Hauptstraße 24 — handwerkliche Metzgerei mit eigener Schlachtung, Verkauf direkt aus der Werkstatt.</p>
-            </div>
+      <div class="rounded-3xl p-8 lg:p-12 reveal relative overflow-hidden text-warm" style="background: linear-gradient(135deg, #1A1612 0%, #0F0C0A 100%); --reveal-delay: 100ms;">
+        <div class="aura-ember"></div>
+        <div class="relative">
+          <div class="flex items-center justify-between mb-8 pb-8 border-b border-warm/15">
+            <span class="gold-pill">Service 02</span>
+            <span class="font-mono text-[0.7rem] tracking-[0.18em] uppercase text-warm/55">Nach Vereinbarung</span>
           </div>
-
-          <div class="flex gap-6 mb-10">
-            <div class="timeline-dot"></div>
-            <div class="flex-1">
-              <div class="flex items-baseline gap-3">
-                <span class="font-display text-3xl text-burgundy italic">2. Gen.</span>
-                <span class="font-mono text-[0.65rem] tracking-[0.22em] uppercase text-mute">Übergabe</span>
-              </div>
-              <p class="mt-2 text-mute leading-[1.65] max-w-lg">Übernahme durch den Sohn des Gründers — Erweiterung des Wurstsortiments, Etablierung der heutigen Hausrezepturen.</p>
-            </div>
-          </div>
-
-          <div class="flex gap-6 mb-10">
-            <div class="timeline-dot"></div>
-            <div class="flex-1">
-              <div class="flex items-baseline gap-3">
-                <span class="font-display text-3xl text-burgundy italic">3. Gen.</span>
-                <span class="font-mono text-[0.65rem] tracking-[0.22em] uppercase text-mute">Mittagstisch</span>
-              </div>
-              <p class="mt-2 text-mute leading-[1.65] max-w-lg">Aufbau des Mittagstischs und Lieferservices — Metzgerei wird zum Treffpunkt in Schwalbach.</p>
-            </div>
-          </div>
-
-          <div class="flex gap-6">
-            <div class="timeline-dot !bg-gold !shadow-[0_0_0_1px_#B8893E]"></div>
-            <div class="flex-1">
-              <div class="flex items-baseline gap-3">
-                <span class="font-display text-3xl italic">Heute</span>
-                <span class="font-mono text-[0.65rem] tracking-[0.22em] uppercase text-gold">4. Generation</span>
-              </div>
-              <p class="mt-2 text-mute leading-[1.65] max-w-lg">Vier Gold-Auszeichnungen, Aufnahme in die Feinschmecker Top 500 Deutschlands — geführt als Jochem GmbH, Mitglied der Saarländischen Fleischerinnung.</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="mt-12 pt-8 border-t border-rule">
-          <p class="pull-quote text-2xl lg:text-3xl text-ink max-w-2xl">
-            „Was sich in vier Generationen bewährt hat, geben wir nicht her — nicht das Rezept, nicht den Anspruch, nicht den Ort."
+          <h3 class="font-display text-3xl lg:text-4xl font-bold tracking-tight">
+            Lebensmittel-<br>service.
+          </h3>
+          <p class="text-warm/65 leading-relaxed mt-5 mb-8">
+            Wurst- und Fleischwaren plus Grundsortiment — Eier, Butter, Käse, Milch, Nudeln — direkt nach Hause. Innerhalb Schwalbachs.
           </p>
-          <p class="mt-4 font-mono text-[0.65rem] tracking-[0.22em] uppercase text-mute">— Familie Jochem</p>
+
+          <div class="space-y-3 mb-10">
+            <div class="flex justify-between text-sm pb-3 border-b border-warm/10">
+              <span class="text-warm/55">Lieferzeit</span>
+              <span class="font-mono tabular font-medium">11:30 – 13:30 Uhr</span>
+            </div>
+            <div class="flex justify-between text-sm pb-3 border-b border-warm/10">
+              <span class="text-warm/55">Mindestbestellung</span>
+              <span class="font-mono tabular font-medium">10,00 €</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-warm/55">Anfahrt</span>
+              <span class="font-mono tabular font-medium">+ 1,00 €</span>
+            </div>
+          </div>
+
+          <a href="tel:+4968345113" class="btn btn-amber w-full justify-center">
+            Bestellen <span class="font-mono text-[0.8em] tracking-normal opacity-80">· 0 68 34 / 5 11 13</span>
+          </a>
         </div>
       </div>
 
     </div>
+
+    <!-- Lieferzonen strip -->
+    <div class="mt-16 pt-10 border-t border-bg-dark/15 reveal">
+      <div class="font-mono text-[0.72rem] tracking-[0.22em] uppercase text-bg-dark/55 mb-5">Wir liefern in</div>
+      <div class="flex flex-wrap gap-3 lg:gap-4">
+        <div class="px-5 py-2.5 rounded-full bg-bg-dark text-warm font-medium">Schwalbach</div>
+        <div class="px-5 py-2.5 rounded-full bg-bg-dark/10 text-bg-dark font-medium">Ensdorf</div>
+        <div class="px-5 py-2.5 rounded-full bg-bg-dark/10 text-bg-dark font-medium">Bous</div>
+        <div class="px-5 py-2.5 rounded-full bg-bg-dark/10 text-bg-dark font-medium">Überherrn</div>
+        <div class="px-5 py-2.5 rounded-full bg-bg-dark/10 text-bg-dark font-medium">Wadgassen</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ============================== ÖFFNUNGSZEITEN + KONTAKT ============================== -->
-<section id="kontakt" class="relative">
-  <div class="max-w-container mx-auto px-6 lg:px-10 py-24 lg:py-32">
+<!-- ============================== BESUCH / HOURS / KONTAKT ============================== -->
+<section id="besuch" class="section-deeper section-pad-lg relative overflow-hidden grain">
+  <div class="aura-amber"></div>
 
-    <div class="section-label mb-12 reveal">
-      <span class="roman-num">VIII.</span>
-      <span class="label-text">Besuch · Öffnungszeiten · Kontakt</span>
-      <span class="accent-rule"></span>
+  <div class="relative max-w-container mx-auto px-6 lg:px-10">
+
+    <div class="section-label reveal">
+      <span class="label-num">06 / Besuchen</span>
+      <span class="label-rule"></span>
+    </div>
+
+    <div class="reveal-blur mb-16 lg:mb-20">
+      <h2 class="h-section max-w-4xl">
+        Hauptstraße&nbsp;24.<br>
+        <span class="text-gradient-amber">Seit 122 Jahren</span> dieselbe Adresse.
+      </h2>
     </div>
 
     <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
 
       <!-- Hours -->
-      <div class="lg:col-span-6 reveal">
-        <h3 class="font-display text-3xl lg:text-4xl tracking-tight mb-2">
-          Wann wir <span class="italic text-burgundy">öffnen.</span>
-        </h3>
-        <p class="text-mute mb-8">Mittwochnachmittag ist Ruhetag — der Automat hat auch dann geöffnet.</p>
+      <div class="lg:col-span-7 reveal">
+        <h3 class="font-display text-2xl font-bold tracking-tight mb-2">Öffnungszeiten</h3>
+        <p class="text-warm/55 mb-8">Mittwochnachmittag Ruhetag — der Automat hat 24 / 7 geöffnet.</p>
 
         <div>
           <div class="hours-row">
@@ -779,7 +723,7 @@
           </div>
           <div class="hours-row">
             <span class="day">Dienstag</span>
-            <span class="time">07:30 – 12:30 <span class="text-gold mx-1">·</span> 14:30 – 18:00</span>
+            <span class="time">07:30 – 12:30 <span class="text-gold mx-2">·</span> 14:30 – 18:00</span>
           </div>
           <div class="hours-row">
             <span class="day">Mittwoch</span>
@@ -787,7 +731,7 @@
           </div>
           <div class="hours-row">
             <span class="day">Donnerstag</span>
-            <span class="time">07:30 – 12:30 <span class="text-gold mx-1">·</span> 14:30 – 18:00</span>
+            <span class="time">07:30 – 12:30 <span class="text-gold mx-2">·</span> 14:30 – 18:00</span>
           </div>
           <div class="hours-row">
             <span class="day">Freitag</span>
@@ -804,54 +748,45 @@
         </div>
 
         <div class="mt-6 flex items-center gap-3 text-sm">
-          <span class="live-dot"></span>
-          <span class="font-mono text-[0.7rem] tracking-[0.18em] uppercase text-mute" data-open-state>Status wird geladen…</span>
+          <span class="live-dot" data-open-dot></span>
+          <span class="font-mono text-[0.74rem] tracking-[0.18em] uppercase text-warm/85" data-open-state>Status wird geladen…</span>
         </div>
-
       </div>
 
-      <!-- Address + contact -->
-      <div class="lg:col-span-6 reveal" style="--reveal-delay: 100ms;">
-        <h3 class="font-display text-3xl lg:text-4xl tracking-tight mb-2">
-          Wo Sie uns <span class="italic text-burgundy">finden.</span>
-        </h3>
-        <p class="text-mute mb-8">In der Hauptstraße 24, mitten in Schwalbach — der gleiche Ort seit 1902.</p>
+      <!-- Contact card -->
+      <div class="lg:col-span-5 reveal" style="--reveal-delay: 100ms;">
+        <div class="card-dark p-8 lg:p-10">
 
-        <div class="bg-cream p-8 lg:p-10 border border-rule">
-          <div class="space-y-6">
-            <div>
-              <div class="font-mono text-[0.65rem] tracking-[0.22em] uppercase text-mute mb-2">Anschrift</div>
-              <div class="font-display text-2xl leading-tight">
-                Metzgerei Jochem<br>
-                Hauptstraße 24<br>
-                66773 Schwalbach
-              </div>
-            </div>
-            <div class="pt-6 border-t border-rule">
-              <div class="font-mono text-[0.65rem] tracking-[0.22em] uppercase text-mute mb-2">Telefon</div>
-              <a href="tel:+4968345113" class="font-display text-2xl text-burgundy link-underline !text-2xl !font-display !normal-case !tracking-normal">0 68 34 / 5 11 13</a>
-            </div>
-            <div class="pt-6 border-t border-rule">
-              <div class="font-mono text-[0.65rem] tracking-[0.22em] uppercase text-mute mb-2">E-Mail</div>
-              <a href="mailto:metzgereijochem@aol.com" class="font-display text-xl link-underline !text-xl !font-display !normal-case !tracking-normal">metzgereijochem@aol.com</a>
-            </div>
-            <div class="pt-6 border-t border-rule">
-              <div class="font-mono text-[0.65rem] tracking-[0.22em] uppercase text-mute mb-3">Folgen</div>
-              <div class="flex items-center gap-3">
-                <a href="#" aria-label="Facebook" class="w-10 h-10 grid place-items-center border border-rule rounded-full hover:bg-ink hover:text-paper hover:border-ink transition-colors">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.55 9.88v-6.99H7.9V12h2.55V9.8c0-2.52 1.5-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.57V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
-                </a>
-                <a href="#" aria-label="Instagram" class="w-10 h-10 grid place-items-center border border-rule rounded-full hover:bg-ink hover:text-paper hover:border-ink transition-colors">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
-                </a>
-              </div>
+          <div class="font-mono text-[0.68rem] tracking-[0.22em] uppercase text-gold mb-3">Anschrift</div>
+          <div class="font-display text-2xl lg:text-3xl font-bold leading-tight mb-1">Metzgerei Jochem</div>
+          <div class="text-warm/75 leading-relaxed">Hauptstraße 24<br>66773 Schwalbach</div>
+
+          <div class="mt-8 pt-8 border-t border-warm/10">
+            <div class="font-mono text-[0.68rem] tracking-[0.22em] uppercase text-gold mb-3">Telefon</div>
+            <a href="tel:+4968345113" class="font-display text-2xl font-bold tracking-tight hover:text-gold transition-colors block">0 68 34 / 5 11 13</a>
+          </div>
+
+          <div class="mt-8 pt-8 border-t border-warm/10">
+            <div class="font-mono text-[0.68rem] tracking-[0.22em] uppercase text-gold mb-3">E-Mail</div>
+            <a href="mailto:metzgereijochem@aol.com" class="font-display text-xl font-bold tracking-tight hover:text-gold transition-colors block break-all">metzgereijochem@aol.com</a>
+          </div>
+
+          <div class="mt-8 pt-8 border-t border-warm/10">
+            <div class="font-mono text-[0.68rem] tracking-[0.22em] uppercase text-gold mb-3">Folgen</div>
+            <div class="flex items-center gap-3">
+              <a href="#" aria-label="Facebook" class="w-11 h-11 grid place-items-center border border-warm/20 rounded-full hover:bg-warm hover:text-bg-dark hover:border-warm transition-all">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.55 9.88v-6.99H7.9V12h2.55V9.8c0-2.52 1.5-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.57V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+              </a>
+              <a href="#" aria-label="Instagram" class="w-11 h-11 grid place-items-center border border-warm/20 rounded-full hover:bg-warm hover:text-bg-dark hover:border-warm transition-all">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+              </a>
             </div>
           </div>
 
-          <div class="mt-8 pt-8 border-t border-rule">
-            <a href="https://www.google.com/maps/search/?api=1&query=Hauptstra%C3%9Fe+24+66773+Schwalbach" target="_blank" rel="noopener" class="btn btn-primary w-full justify-center">
+          <div class="mt-10">
+            <a href="https://www.google.com/maps/search/?api=1&query=Hauptstra%C3%9Fe+24+66773+Schwalbach" target="_blank" rel="noopener" class="btn btn-amber w-full justify-center">
               Anfahrt planen
-              <span class="btn-arrow">→</span>
+              <span class="arrow">→</span>
             </a>
           </div>
         </div>
@@ -865,42 +800,37 @@
 </main>
 
 <!-- ============================== FOOTER ============================== -->
-<footer class="bg-ink text-paper relative overflow-hidden">
-  <div class="absolute inset-0 grain opacity-30"></div>
+<footer class="section-deeper relative overflow-hidden">
+  <div class="aura-ember opacity-50"></div>
 
-  <div class="relative max-w-container mx-auto px-6 lg:px-10 py-20">
+  <div class="relative max-w-container mx-auto px-6 lg:px-10 pt-24 pb-16 lg:pt-32 lg:pb-20">
 
-    <!-- Top: brand + tagline -->
-    <div class="pb-12 border-b border-paper/15 reveal">
+    <!-- Mega brand -->
+    <div class="pb-16 lg:pb-24 border-b border-warm/10 reveal">
       <div class="grid lg:grid-cols-12 gap-10 items-end">
         <div class="lg:col-span-8">
-          <span class="text-gold text-[0.7rem] tracking-[0.5em] select-none">✦ ✦ ✦</span>
-          <div class="font-display text-6xl lg:text-7xl font-medium tracking-[0.12em] mt-3">JOCHEM</div>
-          <div class="font-mono text-[0.7rem] tracking-[0.26em] text-gold-l uppercase mt-3">Metzgerei <span class="text-paper/40 mx-1">·</span> Seit 11. November 1902</div>
+          <div class="font-mono text-[0.72rem] tracking-[0.3em] uppercase text-gold mb-4">Seit 1902</div>
+          <div class="h-mega font-display font-black tracking-[-0.04em] leading-[0.85] text-warm">JOCHEM</div>
+          <div class="font-mono text-[0.78rem] tracking-[0.3em] uppercase text-warm/55 mt-6">
+            Metzgerei <span class="text-gold mx-1">·</span> Schwalbach <span class="text-gold mx-1">·</span> Saarland
+          </div>
         </div>
         <div class="lg:col-span-4">
-          <p class="text-paper/70 leading-[1.65]">Traditionshandwerk in vierter Generation — Hauptstr. 24, Schwalbach. Mehrfach ausgezeichnet, jederzeit erreichbar.</p>
+          <p class="text-warm/65 leading-relaxed text-lg">Traditionshandwerk in vierter Generation — Hauptstr. 24, Schwalbach. Mehrfach prämiert, jederzeit erreichbar.</p>
+          <a href="tel:+4968345113" class="btn btn-amber mt-6">
+            0 68 34 / 5 11 13
+            <span class="arrow">→</span>
+          </a>
         </div>
       </div>
     </div>
 
-    <div class="pt-12 grid lg:grid-cols-12 gap-10">
+    <!-- Link grid -->
+    <div class="pt-16 grid grid-cols-2 lg:grid-cols-12 gap-10">
 
       <div class="lg:col-span-3">
-        <div class="font-mono text-[0.7rem] tracking-[0.22em] uppercase text-gold-l mb-5">Kontakt</div>
-        <div class="space-y-3 text-[0.95rem]">
-          <a href="tel:+4968345113" class="block hover:text-gold transition-colors">0 68 34 / 5 11 13</a>
-          <a href="mailto:metzgereijochem@aol.com" class="block hover:text-gold transition-colors break-all">metzgereijochem@aol.com</a>
-          <div class="text-paper/65 pt-2 leading-relaxed">
-            Hauptstraße 24<br>
-            66773 Schwalbach
-          </div>
-        </div>
-      </div>
-
-      <div class="lg:col-span-3">
-        <div class="font-mono text-[0.7rem] tracking-[0.22em] uppercase text-gold-l mb-5">Aus der Theke</div>
-        <ul class="space-y-2.5 text-[0.92rem]">
+        <div class="font-mono text-[0.7rem] tracking-[0.22em] uppercase text-gold mb-5">Sortiment</div>
+        <ul class="space-y-3 text-warm/75">
           <li><a href="#sortiment" class="hover:text-gold transition-colors">Delikatess-Leberwurst</a></li>
           <li><a href="#sortiment" class="hover:text-gold transition-colors">Haussalami</a></li>
           <li><a href="#sortiment" class="hover:text-gold transition-colors">Farmerschinken</a></li>
@@ -910,47 +840,62 @@
       </div>
 
       <div class="lg:col-span-3">
-        <div class="font-mono text-[0.7rem] tracking-[0.22em] uppercase text-gold-l mb-5">Service</div>
-        <ul class="space-y-2.5 text-[0.92rem]">
-          <li><a href="#mittagstisch"  class="hover:text-gold transition-colors">Mittagstisch</a></li>
-          <li><a href="#lieferservice" class="hover:text-gold transition-colors">Lieferservice</a></li>
-          <li><a href="#automat"       class="hover:text-gold transition-colors">24 / 7 Automat</a></li>
-          <li><a href="#tradition"     class="hover:text-gold transition-colors">Tradition</a></li>
+        <div class="font-mono text-[0.7rem] tracking-[0.22em] uppercase text-gold mb-5">Service</div>
+        <ul class="space-y-3 text-warm/75">
+          <li><a href="#lieferung"      class="hover:text-gold transition-colors">Lieferservice</a></li>
+          <li><a href="#lieferung"      class="hover:text-gold transition-colors">Mittagstisch</a></li>
+          <li><a href="#automat"        class="hover:text-gold transition-colors">24 / 7 Automat</a></li>
+          <li><a href="#tradition"      class="hover:text-gold transition-colors">Tradition</a></li>
           <li><a href="#auszeichnungen" class="hover:text-gold transition-colors">Auszeichnungen</a></li>
         </ul>
       </div>
 
       <div class="lg:col-span-3">
-        <div class="font-mono text-[0.7rem] tracking-[0.22em] uppercase text-gold-l mb-5">Öffnungszeiten</div>
-        <ul class="space-y-1.5 text-[0.88rem] text-paper/80">
+        <div class="font-mono text-[0.7rem] tracking-[0.22em] uppercase text-gold mb-5">Kontakt</div>
+        <ul class="space-y-3 text-warm/75">
+          <li><a href="tel:+4968345113"            class="hover:text-gold transition-colors block">0 68 34 / 5 11 13</a></li>
+          <li><a href="mailto:metzgereijochem@aol.com" class="hover:text-gold transition-colors block break-all">metzgereijochem@aol.com</a></li>
+          <li class="text-warm/55 pt-2 leading-relaxed">
+            Hauptstraße 24<br>
+            66773 Schwalbach
+          </li>
+        </ul>
+        <div class="mt-5 flex items-center gap-3">
+          <a href="#" aria-label="Facebook" class="w-9 h-9 grid place-items-center border border-warm/15 rounded-full hover:border-gold hover:text-gold transition-colors">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.55 9.88v-6.99H7.9V12h2.55V9.8c0-2.52 1.5-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.57V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="w-9 h-9 grid place-items-center border border-warm/15 rounded-full hover:border-gold hover:text-gold transition-colors">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-3">
+        <div class="font-mono text-[0.7rem] tracking-[0.22em] uppercase text-gold mb-5">Öffnungszeiten</div>
+        <ul class="space-y-2 text-sm text-warm/75">
           <li class="flex justify-between"><span>Mo · Mi</span><span class="font-mono tabular">07:30 – 12:30</span></li>
           <li class="flex justify-between"><span>Di · Do</span><span class="font-mono tabular">+ 14:30 – 18:00</span></li>
           <li class="flex justify-between"><span>Fr</span><span class="font-mono tabular">07:30 – 18:00</span></li>
           <li class="flex justify-between"><span>Sa</span><span class="font-mono tabular">07:00 – 13:00</span></li>
-          <li class="flex justify-between text-paper/50"><span>So</span><span class="font-mono">Ruhetag</span></li>
+          <li class="flex justify-between text-warm/45"><span>So</span><span class="font-mono">Ruhetag</span></li>
         </ul>
-        <div class="mt-5 pt-4 border-t border-paper/15 flex items-center gap-2 text-[0.78rem]">
-          <span class="live-dot"></span>
-          <span class="font-mono tracking-[0.16em] uppercase text-paper/85" data-open-state>—</span>
+        <div class="mt-5 pt-4 border-t border-warm/10 flex items-center gap-2">
+          <span class="live-dot" data-open-dot></span>
+          <span class="font-mono text-[0.7rem] tracking-[0.18em] uppercase text-warm/75" data-open-state>—</span>
         </div>
       </div>
 
     </div>
 
-    <div class="mt-16 pt-8 border-t border-paper/15 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-[0.82rem] text-paper/60">
+    <!-- Bottom -->
+    <div class="mt-16 pt-8 border-t border-warm/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-warm/55">
         <span>&copy; <span data-year>2026</span> Jochem GmbH Metzgerei und Lebensmittel</span>
-        <a href="impressum.html"            class="hover:text-gold transition-colors">Impressum</a>
-        <a href="datenschutz.html"          class="hover:text-gold transition-colors">Datenschutz</a>
-        <a href="barrierefreiheit.html"     class="hover:text-gold transition-colors">Barrierefreiheit</a>
       </div>
-      <div class="flex items-center gap-4">
-        <a href="#" aria-label="Facebook" class="text-paper/60 hover:text-gold transition-colors">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.55 9.88v-6.99H7.9V12h2.55V9.8c0-2.52 1.5-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.57V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
-        </a>
-        <a href="#" aria-label="Instagram" class="text-paper/60 hover:text-gold transition-colors">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
-        </a>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="impressum.html"            class="text-warm/55 hover:text-gold transition-colors">Impressum</a>
+        <a href="datenschutz.html"          class="text-warm/55 hover:text-gold transition-colors">Datenschutz</a>
+        <a href="barrierefreiheit.html"     class="text-warm/55 hover:text-gold transition-colors">Barrierefreiheit</a>
       </div>
     </div>
 
@@ -959,29 +904,31 @@
 
 <!-- ============================== MOBILE MENU ============================== -->
 <div class="mobile-panel lg:hidden">
-  <div class="flex items-center justify-between px-6 h-[96px] border-b border-rule">
-    <a href="/" class="flex flex-col leading-none">
-      <span class="text-gold text-[0.6rem] tracking-[0.5em] mb-1 select-none">✦ ✦ ✦</span>
-      <span class="font-display text-2xl font-medium tracking-[0.14em] text-ink leading-none">JOCHEM</span>
-      <span class="font-mono text-[0.55rem] tracking-[0.26em] text-burgundy uppercase mt-1.5">Seit 1902</span>
+  <div class="flex items-center justify-between px-6 h-[88px] border-b border-warm/10">
+    <a href="/" class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full border border-warm/30 grid place-items-center">
+        <span class="font-display italic text-warm text-xl leading-none mt-0.5">J</span>
+      </div>
+      <div class="leading-tight">
+        <div class="font-display text-warm font-bold tracking-[0.06em] text-base leading-none">JOCHEM</div>
+        <div class="font-mono text-[0.58rem] tracking-[0.22em] text-gold mt-1 uppercase">Seit 1902</div>
+      </div>
     </a>
-    <button data-menu-close class="p-2 -mr-2" aria-label="Menü schließen">
+    <button data-menu-close class="p-2 -mr-2 text-warm" aria-label="Menü schließen">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
   </div>
 
-  <nav class="p-6 space-y-1 overflow-y-auto h-[calc(100%-96px)]">
-    <a href="#auszeichnungen" class="block py-4 border-b border-rule font-display text-2xl">Auszeichnungen</a>
-    <a href="#sortiment"      class="block py-4 border-b border-rule font-display text-2xl">Sortiment</a>
-    <a href="#mittagstisch"   class="block py-4 border-b border-rule font-display text-2xl">Mittagstisch</a>
-    <a href="#lieferservice"  class="block py-4 border-b border-rule font-display text-2xl">Lieferservice</a>
-    <a href="#automat"        class="block py-4 border-b border-rule font-display text-2xl">24 / 7 Automat</a>
-    <a href="#tradition"      class="block py-4 border-b border-rule font-display text-2xl">Tradition</a>
-    <a href="#kontakt"        class="block py-4 border-b border-rule font-display text-2xl">Kontakt</a>
-    <div class="pt-8">
-      <a href="tel:+4968345113" class="btn btn-primary w-full justify-center">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Anrufen <span class="font-mono normal-case tracking-normal">· 0 68 34 / 5 11 13</span>
+  <nav class="p-6 space-y-1 overflow-y-auto h-[calc(100%-88px)]">
+    <a href="#auszeichnungen" class="block py-5 border-b border-warm/10 font-display font-bold text-2xl text-warm">Auszeichnungen</a>
+    <a href="#sortiment"      class="block py-5 border-b border-warm/10 font-display font-bold text-2xl text-warm">Sortiment</a>
+    <a href="#tradition"      class="block py-5 border-b border-warm/10 font-display font-bold text-2xl text-warm">Tradition</a>
+    <a href="#automat"        class="block py-5 border-b border-warm/10 font-display font-bold text-2xl text-warm">24 / 7 Automat</a>
+    <a href="#lieferung"      class="block py-5 border-b border-warm/10 font-display font-bold text-2xl text-warm">Lieferung</a>
+    <a href="#besuch"         class="block py-5 border-b border-warm/10 font-display font-bold text-2xl text-warm">Besuchen</a>
+    <div class="pt-10">
+      <a href="tel:+4968345113" class="btn btn-amber w-full justify-center">
+        Anrufen <span class="font-mono text-[0.8em] tracking-normal opacity-80">· 0 68 34 / 5 11 13</span>
       </a>
     </div>
   </nav>

@@ -1,9 +1,12 @@
-// Metzgerei Jochem — interactions
+// Metzgerei Jochem — Motion-driven scroll animations
 
-// 1. Scroll reveal
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// ============================== INTERSECTION REVEALS ==============================
 (() => {
-  const els = document.querySelectorAll('.reveal');
-  if (!els.length || !('IntersectionObserver' in window)) {
+  const els = document.querySelectorAll('.reveal, .reveal-blur');
+  if (!els.length) return;
+  if (!('IntersectionObserver' in window)) {
     els.forEach(el => el.classList.add('in'));
     return;
   }
@@ -14,11 +17,23 @@
         io.unobserve(entry.target);
       }
     });
-  }, { rootMargin: '0px 0px -60px 0px', threshold: 0.05 });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
   els.forEach(el => io.observe(el));
 })();
 
-// 2. Mobile menu
+// ============================== HEADER SCROLL ==============================
+(() => {
+  const header = document.querySelector('[data-header]');
+  if (!header) return;
+  const update = () => {
+    if (window.scrollY > 12) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+
+// ============================== MOBILE MENU ==============================
 (() => {
   const trigger = document.querySelector('[data-menu-open]');
   const closer  = document.querySelector('[data-menu-close]');
@@ -32,47 +47,158 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 })();
 
-// 3. Header scroll state
+// ============================== YEAR ==============================
 (() => {
-  const header = document.querySelector('[data-header]');
-  if (!header) return;
-  const onScroll = () => {
-    if (window.scrollY > 12) header.classList.add('header-scrolled');
-    else header.classList.remove('header-scrolled');
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
 })();
 
-// 4. Year
+// ============================== LIVE OPEN STATE ==============================
 (() => {
-  const y = document.querySelector('[data-year]');
-  if (y) y.textContent = new Date().getFullYear();
-})();
-
-// 5. Live "open now" indicator
-(() => {
-  // Schedule: Mo-Do 07:30-12:30, Tue/Thu also 14:30-18:00, Fr 07:30-18:00, Sa 07:00-13:00
+  // Mo-Do 07:30-12:30; Di+Do also 14:30-18:00; Fr 07:30-18:00; Sa 07:00-13:00
   const now = new Date();
-  const day = now.getDay(); // 0 Sun, 1 Mon ... 6 Sat
-  const h = now.getHours() + now.getMinutes()/60;
-
-  let open = false;
+  const day = now.getDay();
+  const h = now.getHours() + now.getMinutes() / 60;
   const inRange = (a, b) => h >= a && h < b;
-
-  if (day >= 1 && day <= 4) {                    // Mon-Thu morning
-    if (inRange(7.5, 12.5)) open = true;
-  }
-  if ((day === 2 || day === 4) && inRange(14.5, 18)) open = true; // Tue/Thu afternoon
-  if (day === 5 && inRange(7.5, 18)) open = true;                 // Fri
-  if (day === 6 && inRange(7, 13)) open = true;                   // Sat
+  let open = false;
+  if (day >= 1 && day <= 4 && inRange(7.5, 12.5)) open = true;
+  if ((day === 2 || day === 4) && inRange(14.5, 18)) open = true;
+  if (day === 5 && inRange(7.5, 18)) open = true;
+  if (day === 6 && inRange(7, 13)) open = true;
 
   document.querySelectorAll('[data-open-state]').forEach(el => {
     el.textContent = open ? 'Jetzt geöffnet' : 'Außerhalb der Öffnungszeiten';
-    el.dataset.openNow = open ? 'true' : 'false';
-    if (!open) {
-      el.previousElementSibling?.classList.remove('live-dot');
-      el.previousElementSibling?.classList.add('inline-block', 'h-2', 'w-2', 'rounded-full', 'bg-burgundy', 'opacity-60');
-    }
   });
+  document.querySelectorAll('[data-open-dot]').forEach(el => {
+    if (!open) el.classList.add('closed');
+  });
+})();
+
+// ============================== MOTION ONE — Scroll Animations ==============================
+(() => {
+  if (reduced) return;
+  if (typeof Motion === 'undefined') {
+    console.warn('Motion One library not loaded — skipping scroll animations');
+    return;
+  }
+  const { scroll, animate, inView } = Motion;
+
+  // --- HERO: dramatic parallax + scale + fade ---
+  const heroImage   = document.querySelector('[data-parallax]');
+  const heroSection = document.querySelector('.hero');
+  const heroContent = document.querySelector('.hero-content');
+
+  if (heroImage && heroSection) {
+    scroll(
+      animate(heroImage, {
+        scale: [1.05, 1.25],
+        y: [0, 180],
+      }),
+      { target: heroSection, offset: ['start start', 'end start'] }
+    );
+  }
+
+  if (heroContent && heroSection) {
+    scroll(
+      animate(heroContent, {
+        opacity: [1, 0.15],
+        y: [0, -60],
+        scale: [1, 0.95],
+      }),
+      { target: heroSection, offset: ['start start', 'end start'] }
+    );
+  }
+
+  // --- FEATURE IMAGES: subtle scale + rotate during sticky pin ---
+  document.querySelectorAll('[data-feature-image]').forEach((el) => {
+    const row = el.closest('.feature-row');
+    if (!row) return;
+    scroll(
+      animate(el, {
+        scale: [0.92, 1.0, 1.0, 0.94],
+        rotate: [-1.5, 0, 0, 1.5],
+      }),
+      { target: row, offset: ['start end', 'center center', 'center center', 'end start'] }
+    );
+  });
+
+  // --- MEGA STAT 122: scale + glow while sticky ---
+  const megaStat = document.querySelector('[data-mega-stat]');
+  if (megaStat) {
+    const innerStat = megaStat.querySelector('.stat-big');
+    if (innerStat) {
+      scroll(
+        animate(innerStat, {
+          scale: [0.85, 1.0, 1.05, 0.95],
+          letterSpacing: ['-0.04em', '-0.05em', '-0.05em', '-0.04em'],
+        }),
+        { target: megaStat, offset: ['start end', 'center center', 'center center', 'end start'] }
+      );
+    }
+  }
+
+  // --- MEDAL DISC: entrance scale + rotate via inView ---
+  inView('.medal-disc', (info) => {
+    animate(info.target, {
+      scale: [0.4, 1],
+      rotate: [-180, 0],
+      opacity: [0, 1],
+    }, { duration: 1.1, easing: [0.16, 1, 0.3, 1] });
+    return () => {};
+  }, { amount: 0.4 });
+
+  // --- MEDAL RIBBON: enter from below ---
+  inView('.medal-ribbon', (info) => {
+    animate(info.target, {
+      y: [40, 0],
+      opacity: [0, 1],
+    }, { duration: 0.7, delay: 0.5, easing: [0.16, 1, 0.3, 1] });
+    return () => {};
+  }, { amount: 0.5 });
+
+  // --- AURA / GLOWS: subtle scroll-linked drift ---
+  document.querySelectorAll('.aura-amber, .aura-ember').forEach((el) => {
+    const section = el.parentElement;
+    if (!section) return;
+    scroll(
+      animate(el, {
+        y: [0, -120],
+      }),
+      { target: section, offset: ['start end', 'end start'] }
+    );
+  });
+
+  // --- TRADITION TIMELINE DOTS: stronger glow as they enter ---
+  inView('.tline-dot', (info) => {
+    animate(info.target, {
+      scale: [0, 1],
+      opacity: [0, 1],
+    }, { duration: 0.6, delay: 0.2, easing: [0.16, 1, 0.3, 1] });
+    return () => {};
+  }, { amount: 0.6 });
+
+  // --- HOURS ROWS: subtle slide-in on scroll ---
+  inView('.hours-row', (info) => {
+    animate(info.target, {
+      x: [-30, 0],
+      opacity: [0, 1],
+    }, { duration: 0.55, easing: [0.16, 1, 0.3, 1] });
+    return () => {};
+  }, { amount: 0.5 });
+
+  // --- CHIPS: cascade enter ---
+  const chips = document.querySelectorAll('.chip');
+  if (chips.length) {
+    inView(chips[0].parentElement, () => {
+      chips.forEach((chip, i) => {
+        animate(chip, {
+          y: [20, 0],
+          opacity: [0, 1],
+        }, { duration: 0.5, delay: i * 0.035, easing: [0.16, 1, 0.3, 1] });
+      });
+      return () => {};
+    }, { amount: 0.2 });
+  }
+
+  // --- MARQUEE: slow when scrolling reverse for "scrub" feel ---
+  // (Marquee runs via CSS animation; we leave it alone for performance.)
 })();

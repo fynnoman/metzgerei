@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Impressum — Metzgerei Jochem</title>
+<title>Impressum — Jochem GmbH Metzgerei und Lebensmittel</title>
 <meta name="description" content="Impressum gemäß § 5 TMG für die Jochem GmbH Metzgerei und Lebensmittel in Schwalbach.">
 <meta name="robots" content="noindex,follow">
 
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -18,14 +18,13 @@
     theme: {
       extend: {
         colors: {
-          ink: '#1A1410', paper: '#F5EFE0', cream: '#EBE2C9', sand: '#E0D4B5',
-          rule: '#C9BEA1', mute: '#6B5E50', whisper: '#8B7E6D',
-          burgundy: '#6B1B1B', 'burgundy-d': '#4A0F0F',
-          gold: '#B8893E', 'gold-l': '#D4AF6B',
+          'bg-dark': '#0F0C0A', 'bg-deeper': '#060503', 'bg-charcoal': '#1A1612',
+          surface: '#F5EFE0', warm: '#F0E6D2',
+          gold: '#E8AC4A', 'gold-deep': '#B8893E',
+          ember: '#D43838', burgundy: '#8B1F1F',
         },
         fontFamily: {
-          display: ['Cormorant Garamond','serif'],
-          sans: ['Manrope','sans-serif'],
+          display: ['Hanken Grotesk','sans-serif'], sans: ['Hanken Grotesk','sans-serif'],
           mono: ['JetBrains Mono','monospace'],
         },
         maxWidth: { 'container': '1320px' },
@@ -36,64 +35,66 @@
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 
-<body class="bg-paper text-ink">
+<body class="bg-bg-dark text-warm">
 
-<header data-header class="sticky top-0 z-40 bg-paper/85 backdrop-blur-md border-b border-rule">
+<!-- HEADER -->
+<header data-header class="header">
   <div class="max-w-container mx-auto px-6 lg:px-10">
-    <div class="flex items-center justify-between h-[96px]">
-      <a href="index.html" class="flex flex-col leading-none">
-        <span class="text-gold text-[0.7rem] tracking-[0.5em] mb-1.5 select-none">✦ ✦ ✦</span>
-        <span class="font-display text-[2.1rem] md:text-[2.4rem] font-medium tracking-[0.14em] text-ink leading-none">JOCHEM</span>
-        <span class="font-mono text-[0.6rem] tracking-[0.28em] text-burgundy uppercase mt-2">Metzgerei <span class="text-gold mx-1">·</span> seit 1902</span>
+    <div class="flex items-center justify-between h-[88px]">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-full border border-warm/30 grid place-items-center group-hover:border-gold transition-colors">
+          <span class="font-display italic text-warm text-2xl leading-none mt-0.5">J</span>
+        </div>
+        <div class="leading-tight">
+          <div class="font-display text-warm font-bold tracking-[0.06em] text-lg leading-none">JOCHEM</div>
+          <div class="font-mono text-[0.62rem] tracking-[0.22em] text-gold mt-1 uppercase">Seit 1902</div>
+        </div>
       </a>
-      <a href="index.html" class="link-underline text-ink">← Zur Startseite</a>
+      <a href="index.html" class="font-mono text-[0.78rem] tracking-[0.18em] uppercase text-warm/80 hover:text-gold transition-colors">← Startseite</a>
     </div>
   </div>
 </header>
 
 <main>
 
-<section class="border-b border-rule grain relative">
-  <div class="hero-atmosphere"></div>
-  <div class="relative max-w-container mx-auto px-6 lg:px-10 pt-16 lg:pt-24 pb-12 lg:pb-16">
-    <div class="section-label mb-10">
-      <span class="roman-num">§.</span>
-      <span class="label-text">Rechtliches</span>
-      <span class="accent-rule"></span>
+<!-- HERO -->
+<section class="section-pad border-b border-warm/10 relative overflow-hidden grain">
+  <div class="aura-amber"></div>
+  <div class="relative max-w-container mx-auto px-6 lg:px-10">
+    <div class="section-label">
+      <span class="label-num">§ / Rechtliches</span>
+      <span class="label-rule"></span>
     </div>
-    <h1 class="display-xl text-[clamp(3rem,8vw,6.5rem)]">
-      Impressum.
-    </h1>
-    <p class="mt-6 font-mono text-[0.72rem] tracking-[0.22em] uppercase text-mute">
-      Angaben gemäß § 5 TMG
-    </p>
+    <h1 class="h-section mt-4">Impressum.</h1>
+    <p class="mt-6 font-mono text-[0.74rem] tracking-[0.22em] uppercase text-warm/60">Angaben gemäß § 5 TMG</p>
   </div>
 </section>
 
-<section>
-  <div class="max-w-container mx-auto px-6 lg:px-10 py-16 lg:py-24">
-    <div class="grid lg:grid-cols-12 gap-12">
+<!-- CONTENT -->
+<section class="section-pad">
+  <div class="max-w-container mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
 
       <aside class="lg:col-span-3">
         <nav class="lg:sticky lg:top-32 space-y-2 text-[0.92rem]">
-          <div class="font-mono text-[0.7rem] tracking-[0.22em] uppercase text-burgundy mb-4">Inhalt</div>
-          <a href="#anbieter"          class="block py-1.5 text-mute hover:text-ink">Anbieter</a>
-          <a href="#vertretung"        class="block py-1.5 text-mute hover:text-ink">Vertretung</a>
-          <a href="#kontakt"           class="block py-1.5 text-mute hover:text-ink">Kontakt</a>
-          <a href="#register"          class="block py-1.5 text-mute hover:text-ink">Register</a>
-          <a href="#aufsicht"          class="block py-1.5 text-mute hover:text-ink">Aufsichtsbehörde</a>
-          <a href="#verantwortlich"    class="block py-1.5 text-mute hover:text-ink">Inhaltlich verantwortlich</a>
-          <a href="#streitschlichtung" class="block py-1.5 text-mute hover:text-ink">Streitschlichtung</a>
-          <a href="#haftung"           class="block py-1.5 text-mute hover:text-ink">Haftung</a>
+          <div class="font-mono text-[0.7rem] tracking-[0.22em] uppercase text-gold mb-5">Inhalt</div>
+          <a href="#anbieter"          class="block py-1.5 text-warm/60 hover:text-warm">Anbieter</a>
+          <a href="#vertretung"        class="block py-1.5 text-warm/60 hover:text-warm">Vertretung</a>
+          <a href="#kontakt"           class="block py-1.5 text-warm/60 hover:text-warm">Kontakt</a>
+          <a href="#register"          class="block py-1.5 text-warm/60 hover:text-warm">Register</a>
+          <a href="#aufsicht"          class="block py-1.5 text-warm/60 hover:text-warm">Aufsicht &amp; Kammer</a>
+          <a href="#verantwortlich"    class="block py-1.5 text-warm/60 hover:text-warm">Verantwortlich</a>
+          <a href="#streitschlichtung" class="block py-1.5 text-warm/60 hover:text-warm">Streitschlichtung</a>
+          <a href="#haftung"           class="block py-1.5 text-warm/60 hover:text-warm">Haftung</a>
         </nav>
       </aside>
 
-      <div class="lg:col-span-9 max-w-2xl space-y-14">
+      <div class="lg:col-span-9 max-w-2xl space-y-16">
 
         <section id="anbieter">
-          <h2 class="font-display text-3xl tracking-tight mb-5 pb-3 border-b border-burgundy">Anbieter</h2>
-          <div class="text-mute leading-[1.7] space-y-1">
-            <p class="text-ink font-medium text-lg">Jochem GmbH Metzgerei und Lebensmittel</p>
+          <h2 class="h-card mb-6 pb-4 border-b border-gold/40">Anbieter</h2>
+          <div class="text-warm/75 leading-relaxed space-y-1">
+            <p class="text-warm font-medium text-xl">Jochem GmbH Metzgerei und Lebensmittel</p>
             <p>Hauptstraße 24</p>
             <p>66773 Schwalbach</p>
             <p>Deutschland</p>
@@ -101,70 +102,69 @@
         </section>
 
         <section id="vertretung">
-          <h2 class="font-display text-3xl tracking-tight mb-5 pb-3 border-b border-burgundy">Vertretung</h2>
-          <p class="text-mute leading-[1.7]">
-            Vertretungsberechtigte Geschäftsführung: <span class="italic">(wird ergänzt)</span>
+          <h2 class="h-card mb-6 pb-4 border-b border-gold/40">Vertretung</h2>
+          <p class="text-warm/75 leading-relaxed">
+            Vertretungsberechtigte Geschäftsführung: <span class="italic text-warm/55">(wird ergänzt)</span>
           </p>
         </section>
 
         <section id="kontakt">
-          <h2 class="font-display text-3xl tracking-tight mb-5 pb-3 border-b border-burgundy">Kontakt</h2>
-          <div class="text-mute leading-[1.7] space-y-2">
-            <p>Telefon: <a href="tel:+4968345113" class="text-ink link-underline !text-[1rem] !font-sans !normal-case !tracking-normal">0 68 34 / 5 11 13</a></p>
-            <p>E-Mail: <a href="mailto:metzgereijochem@aol.com" class="text-ink link-underline !text-[1rem] !font-sans !normal-case !tracking-normal">metzgereijochem@aol.com</a></p>
+          <h2 class="h-card mb-6 pb-4 border-b border-gold/40">Kontakt</h2>
+          <div class="text-warm/75 leading-relaxed space-y-2">
+            <p>Telefon: <a href="tel:+4968345113" class="text-warm hover:text-gold transition-colors">0 68 34 / 5 11 13</a></p>
+            <p>E-Mail: <a href="mailto:metzgereijochem@aol.com" class="text-warm hover:text-gold transition-colors">metzgereijochem@aol.com</a></p>
           </div>
         </section>
 
         <section id="register">
-          <h2 class="font-display text-3xl tracking-tight mb-5 pb-3 border-b border-burgundy">Registereintrag</h2>
-          <div class="text-mute leading-[1.7] space-y-1">
-            <p>Registergericht: <span class="text-ink">Amtsgericht Saarbrücken</span></p>
-            <p>Registernummer: <span class="text-ink">HRB 24333</span></p>
-            <p>Umsatzsteuer-Identifikationsnummer nach § 27a UStG: <span class="italic">(wird ergänzt)</span></p>
-            <p>Wirtschafts-Identifikationsnummer nach § 139c AO: <span class="italic">(falls erteilt — wird ergänzt)</span></p>
+          <h2 class="h-card mb-6 pb-4 border-b border-gold/40">Registereintrag</h2>
+          <div class="text-warm/75 leading-relaxed space-y-2">
+            <p>Registergericht: <span class="text-warm">Amtsgericht Saarbrücken</span></p>
+            <p>Registernummer: <span class="text-warm">HRB 24333</span></p>
+            <p>Umsatzsteuer-Identifikationsnummer (§ 27a UStG): <span class="italic text-warm/55">(wird ergänzt)</span></p>
+            <p>Wirtschafts-Identifikationsnummer (§ 139c AO): <span class="italic text-warm/55">(falls erteilt — wird ergänzt)</span></p>
           </div>
         </section>
 
         <section id="aufsicht">
-          <h2 class="font-display text-3xl tracking-tight mb-5 pb-3 border-b border-burgundy">Aufsichtsbehörde &amp; Kammer</h2>
-          <div class="text-mute leading-[1.7] space-y-3">
-            <p>Zuständige Lebensmittelüberwachungsbehörde: Landkreis Saarlouis — Veterinär- und Lebensmittelüberwachungsamt.</p>
-            <p>Kammerzugehörigkeit: <span class="text-ink">Saarländische Fleischerinnung</span> sowie zuständige Handwerkskammer des Saarlandes.</p>
-            <p>Berufsrechtliche Regelungen: Handwerksordnung (HwO), Lebensmittel- und Futtermittelgesetzbuch (LFGB), zugehörige Verordnungen — einsehbar unter <a href="https://www.gesetze-im-internet.de" target="_blank" rel="noopener" class="text-ink link-underline !text-[0.95rem] !font-sans !normal-case !tracking-normal">gesetze-im-internet.de</a>.</p>
+          <h2 class="h-card mb-6 pb-4 border-b border-gold/40">Aufsichtsbehörde &amp; Kammer</h2>
+          <div class="text-warm/75 leading-relaxed space-y-4">
+            <p>Zuständige Lebensmittelüberwachungsbehörde: <span class="text-warm">Landkreis Saarlouis</span> — Veterinär- und Lebensmittelüberwachungsamt.</p>
+            <p>Kammerzugehörigkeit: <span class="text-warm">Saarländische Fleischerinnung</span> sowie zuständige Handwerkskammer des Saarlandes.</p>
+            <p>Berufsrechtliche Regelungen: Handwerksordnung (HwO), Lebensmittel- und Futtermittelgesetzbuch (LFGB), zugehörige Verordnungen — einsehbar unter <a href="https://www.gesetze-im-internet.de" target="_blank" rel="noopener" class="text-gold hover:underline">gesetze-im-internet.de</a>.</p>
           </div>
         </section>
 
         <section id="verantwortlich">
-          <h2 class="font-display text-3xl tracking-tight mb-5 pb-3 border-b border-burgundy">Inhaltlich verantwortlich nach § 18 Abs. 2 MStV</h2>
-          <div class="text-mute leading-[1.7] space-y-1">
-            <p><span class="italic">(wird ergänzt)</span></p>
+          <h2 class="h-card mb-6 pb-4 border-b border-gold/40">Inhaltlich verantwortlich nach § 18 Abs. 2 MStV</h2>
+          <div class="text-warm/75 leading-relaxed space-y-1">
+            <p><span class="italic text-warm/55">(wird ergänzt)</span></p>
             <p>Anschrift wie oben</p>
           </div>
         </section>
 
         <section id="streitschlichtung">
-          <h2 class="font-display text-3xl tracking-tight mb-5 pb-3 border-b border-burgundy">EU-Streitschlichtung</h2>
-          <p class="text-mute leading-[1.7]">
-            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
-            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener" class="text-ink link-underline !text-[0.95rem] !font-sans !normal-case !tracking-normal">ec.europa.eu/consumers/odr</a>. Unsere E-Mail-Adresse finden Sie oben im Impressum.
+          <h2 class="h-card mb-6 pb-4 border-b border-gold/40">EU-Streitschlichtung</h2>
+          <p class="text-warm/75 leading-relaxed">
+            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener" class="text-gold hover:underline">ec.europa.eu/consumers/odr</a>. Unsere E-Mail-Adresse finden Sie oben.
           </p>
-          <p class="text-mute leading-[1.7] mt-3">
+          <p class="text-warm/75 leading-relaxed mt-4">
             Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
           </p>
         </section>
 
         <section id="haftung">
-          <h2 class="font-display text-3xl tracking-tight mb-5 pb-3 border-b border-burgundy">Haftung für Inhalte und Links</h2>
-          <p class="text-mute leading-[1.7]">
+          <h2 class="h-card mb-6 pb-4 border-b border-gold/40">Haftung für Inhalte und Links</h2>
+          <p class="text-warm/75 leading-relaxed">
             Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.
           </p>
-          <p class="text-mute leading-[1.7] mt-3">
+          <p class="text-warm/75 leading-relaxed mt-4">
             Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
           </p>
         </section>
 
-        <div class="pt-8 border-t border-rule">
-          <p class="font-mono text-[0.72rem] tracking-[0.2em] uppercase text-mute">
+        <div class="pt-10 border-t border-warm/10">
+          <p class="font-mono text-[0.7rem] tracking-[0.2em] uppercase text-warm/45">
             ⚠ Hinweis: Vor Live-Schaltung Vorlage durch Rechtsbeistand prüfen. Felder „(wird ergänzt)" sind verpflichtend nachzutragen.
           </p>
         </div>
@@ -176,15 +176,20 @@
 
 </main>
 
-<footer class="bg-ink text-paper">
+<!-- FOOTER -->
+<footer class="section-deeper border-t border-warm/10">
   <div class="max-w-container mx-auto px-6 lg:px-10 py-12">
     <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-      <a href="index.html" class="flex flex-col leading-none">
-        <span class="text-gold text-[0.65rem] tracking-[0.5em] select-none">✦ ✦ ✦</span>
-        <span class="font-display text-2xl font-medium tracking-[0.14em] mt-1">JOCHEM</span>
-        <span class="font-mono text-[0.55rem] tracking-[0.26em] text-gold-l uppercase mt-1.5">Metzgerei · seit 1902</span>
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full border border-warm/30 grid place-items-center">
+          <span class="font-display italic text-warm text-xl leading-none mt-0.5">J</span>
+        </div>
+        <div class="leading-tight">
+          <div class="font-display text-warm font-bold tracking-[0.06em] text-base leading-none">JOCHEM</div>
+          <div class="font-mono text-[0.58rem] tracking-[0.22em] text-gold mt-1 uppercase">Seit 1902</div>
+        </div>
       </a>
-      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-[0.82rem] text-paper/60">
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-warm/55">
         <span>&copy; <span data-year>2026</span> Jochem GmbH</span>
         <a href="impressum.html"        class="hover:text-gold">Impressum</a>
         <a href="datenschutz.html"      class="hover:text-gold">Datenschutz</a>
